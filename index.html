@@ -1,63 +1,71 @@
 <title>Poker Jacks — Estudio de software</title>
 <meta name="description" content="Poker Jacks — estudio de software costarricense de cuatro ingenieros. Construimos Vivco. Plataformas a la medida, apps móviles e IA aplicada." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
   :root {
-    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
-    --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    --font-head: "Space Grotesk", "Segoe UI", sans-serif;
+    --font-body: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
 
-    --step--1: clamp(0.8rem, 0.78rem + 0.1vw, 0.86rem);
-    --step-0: clamp(1rem, 0.97rem + 0.15vw, 1.08rem);
-    --step-1: clamp(1.18rem, 1.12rem + 0.3vw, 1.4rem);
+    --step--1: clamp(0.82rem, 0.8rem + 0.1vw, 0.88rem);
+    --step-0: clamp(1rem, 0.97rem + 0.15vw, 1.06rem);
+    --step-1: clamp(1.15rem, 1.1rem + 0.3vw, 1.35rem);
     --step-2: clamp(1.45rem, 1.32rem + 0.65vw, 1.9rem);
-    --step-3: clamp(1.9rem, 1.6rem + 1.5vw, 2.9rem);
-    --step-4: clamp(2.5rem, 2rem + 2.6vw, 4.2rem);
+    --step-3: clamp(1.9rem, 1.6rem + 1.6vw, 3rem);
+    --step-4: clamp(2.6rem, 2rem + 3vw, 4.6rem);
 
-    --maxw: 1080px;
-    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --maxw: 1140px;
+    --r-sm: 10px; --r-md: 16px; --r-lg: 22px; --r-xl: 28px;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+    --indigo: #6E7CFF;
+    --violet: #A78BFA;
+    --warm: #FFB86B;
+    --grad: linear-gradient(100deg, #6E7CFF 0%, #A78BFA 60%, #C4B5FD 100%);
+    --grad-btn: linear-gradient(135deg, #5D6BF0, #8B5CF6);
   }
 
-  /* ---------- DARK (default) — navy felt ---------- */
   [data-theme="dark"] {
-    --bg: #0C1018;
-    --surface: #121722;
-    --surface-2: #171D2A;
-    --border: #242B3A;
-    --border-strong: #38415A;
-    --text: #ECEBE6;
-    --text-2: #A5A7A6;
-    --text-3: #70737A;
-    --accent: #E5484D;
-    --accent-ink: #F0888B;
-    --on-accent: #FFF7F7;
-    --blue: #8B93FF;
-    --cream: #F5F0E4;
-    --cream-ink: #1B1C20;
-    --cream-sub: #6B6C70;
-    --success: #57C784;
-    --shadow-hard: 5px 5px 0 rgba(0,0,0,0.45);
+    --bg: #07080F;
+    --bg-2: #0A0C16;
+    --surface: rgba(255,255,255,0.032);
+    --surface-solid: #10121E;
+    --surface-2: rgba(255,255,255,0.055);
+    --border: rgba(255,255,255,0.08);
+    --border-strong: rgba(255,255,255,0.16);
+    --text: #F2F3FA;
+    --text-2: #A6ABCC;
+    --text-3: #666C8F;
+    --accent: #8B93FF;
+    --accent-2: #B7A5FC;
+    --on-accent: #FFFFFF;
+    --success: #4ADE80;
+    --glow: 0 0 60px -12px rgba(110,124,255,0.45);
+    --card-shadow: 0 20px 50px -24px rgba(0,0,0,0.7);
+    --nav-bg: rgba(9,10,18,0.72);
   }
 
-  /* ---------- LIGHT — card stock ---------- */
   [data-theme="light"] {
-    --bg: #F6F2E8;
-    --surface: #FDFBF5;
-    --surface-2: #FFFFFF;
-    --border: #E2DBC9;
-    --border-strong: #C4BBA1;
-    --text: #1B1C20;
-    --text-2: #4D4F53;
-    --text-3: #86878C;
-    --accent: #C0343A;
-    --accent-ink: #A62E33;
-    --on-accent: #FFF7F7;
-    --blue: #4A57D6;
-    --cream: #FFFFFF;
-    --cream-ink: #1B1C20;
-    --cream-sub: #6B6C70;
-    --success: #1D7A46;
-    --shadow-hard: 5px 5px 0 rgba(27,28,32,0.12);
+    --bg: #F7F7FC;
+    --bg-2: #FFFFFF;
+    --surface: #FFFFFF;
+    --surface-solid: #FFFFFF;
+    --surface-2: #F2F3FB;
+    --border: #E5E6F2;
+    --border-strong: #CBCEE6;
+    --text: #14162B;
+    --text-2: #4B5071;
+    --text-3: #83879F;
+    --accent: #4A57D6;
+    --accent-2: #7C5CF0;
+    --on-accent: #FFFFFF;
+    --success: #16A34A;
+    --glow: 0 0 50px -14px rgba(74,87,214,0.35);
+    --card-shadow: 0 24px 48px -28px rgba(20,22,43,0.25);
+    --nav-bg: rgba(255,255,255,0.78);
   }
 
   * { box-sizing: border-box; }
@@ -68,7 +76,7 @@
     margin: 0;
     font-family: var(--font-body);
     font-size: var(--step-0);
-    line-height: 1.65;
+    line-height: 1.7;
     color: var(--text);
     background: var(--bg);
     -webkit-font-smoothing: antialiased;
@@ -76,637 +84,481 @@
     overflow-x: hidden;
   }
 
-  ::selection { background: var(--accent); color: var(--on-accent); }
+  ::selection { background: var(--indigo); color: #fff; }
   a { color: inherit; text-decoration: none; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
 
   html[data-lang="en"] .es { display: none; }
   html[data-lang="es"] .en { display: none; }
 
   .wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: 24px; }
 
-  h1, h2, h3 { font-family: var(--font-display); font-weight: 600; text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+  h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; letter-spacing: -0.02em; text-wrap: balance; margin: 0; }
 
-  /* editorial section index */
-  .idx {
-    font-family: var(--font-mono); font-size: var(--step--1); font-weight: 500;
-    letter-spacing: 0.06em; color: var(--text-3);
+  .grad-text { color: var(--accent); }
+
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-mono); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);
   }
-  .idx b { color: var(--accent-ink); font-weight: 600; }
+  .eyebrow .suit { display: none; }
 
+  /* ---------------- buttons ---------------- */
   .btn {
     display: inline-flex; align-items: center; gap: 9px;
-    font-weight: 650; font-size: var(--step-0);
-    padding: 13px 22px; border-radius: 6px;
+    font-family: var(--font-body); font-weight: 600; font-size: var(--step-0);
+    padding: 14px 26px; border-radius: 999px;
     border: 1px solid transparent; cursor: pointer; line-height: 1;
-    font-family: var(--font-body);
-    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), background 0.2s, border-color 0.2s, color 0.2s;
   }
-  .btn svg { width: 17px; height: 17px; }
-  .btn-primary { background: var(--accent); color: var(--on-accent); }
-  .btn-primary:hover { background: var(--accent-ink); }
+  .btn svg { width: 18px; height: 18px; }
+  .btn-primary {
+    background: #5D6BF0; color: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  }
+  .btn-primary:hover { background: #6E7CFF; }
+  [data-theme="light"] .btn-primary { background: #4A57D6; }
+  [data-theme="light"] .btn-primary:hover { background: #3D48BC; }
   .btn-ghost { background: transparent; color: var(--text); border-color: var(--border-strong); }
-  .btn-ghost:hover { border-color: var(--text); }
+  .btn-ghost:hover { border-color: var(--text-3); background: var(--surface); }
 
-  /* ---------------- NAV ---------------- */
+  /* ---------------- nav ---------------- */
   header.nav {
-    position: sticky; top: 0; z-index: 50;
-    background: var(--bg);
+    position: sticky; top: 0; z-index: 60;
+    display: flex; align-items: center; justify-content: space-between; gap: 14px;
+    padding: 13px max(24px, calc((100% - 1140px) / 2));
+    background: var(--nav-bg);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--border);
   }
-  .nav-inner {
-    max-width: var(--maxw); margin-inline: auto; padding: 14px 24px;
-    display: flex; align-items: center; justify-content: space-between; gap: 16px;
-  }
-  .brand { display: inline-flex; align-items: center; gap: 11px; font-weight: 700; letter-spacing: -0.01em; }
+  .brand { display: inline-flex; align-items: center; gap: 11px; font-family: var(--font-head); font-weight: 700; font-size: 17px; letter-spacing: -0.01em; }
   .brand .mark { width: 32px; height: 32px; flex: none; }
-  .brand .jx { color: var(--blue); }
-  .brand small {
-    display: block; font-family: var(--font-mono); font-weight: 500;
-    font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); line-height: 1;
-    margin-top: 3px;
-  }
+  .brand .jx { color: var(--accent); }
   .nav-links { display: flex; align-items: center; gap: 2px; }
   .nav-links a {
-    font-size: var(--step--1); color: var(--text-2); padding: 8px 12px;
-    border-bottom: 2px solid transparent; transition: color 0.2s;
+    font-size: var(--step--1); font-weight: 500; color: var(--text-2);
+    padding: 9px 15px; border-radius: 999px;
+    transition: color 0.2s, background 0.2s;
   }
-  .nav-links a:hover { color: var(--text); }
+  .nav-links a:hover { color: var(--text); background: var(--surface-2); }
   .nav-tools { display: flex; align-items: center; gap: 8px; }
   .toolbtn {
     display: inline-flex; align-items: center; justify-content: center;
-    height: 36px; min-width: 36px; padding: 0 10px; gap: 6px;
-    border-radius: 6px; border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text-2); cursor: pointer; font-family: var(--font-mono);
-    font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
-    transition: color 0.2s, border-color 0.2s;
+    height: 38px; min-width: 38px; padding: 0 11px; gap: 6px;
+    border-radius: 999px; border: 1px solid var(--border);
+    background: transparent; color: var(--text-2); cursor: pointer;
+    font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
   }
-  .toolbtn:hover { color: var(--text); border-color: var(--border-strong); }
+  .toolbtn:hover { color: var(--text); border-color: var(--border-strong); background: var(--surface-2); }
   .toolbtn svg { width: 16px; height: 16px; }
   .sun, .moon { display: none; }
   [data-theme="dark"] .moon { display: inline; }
   [data-theme="light"] .sun { display: inline; }
-  .nav-cta { display: inline-flex; padding: 9px 16px; font-size: var(--step--1); }
+  .nav-cta { padding: 11px 20px; font-size: var(--step--1); }
   .burger { display: none; }
-
-  @media (max-width: 880px) {
+  @media (max-width: 900px) {
     .nav-links, .nav-cta { display: none; }
     .burger { display: inline-flex; }
   }
-
   .mobile-menu {
-    position: fixed; top: 61px; left: 0; right: 0; z-index: 49;
-    background: var(--surface); border-bottom: 1px solid var(--border);
-    padding: 10px 16px 16px; display: none; flex-direction: column; gap: 2px;
+    position: fixed; top: 64px; left: 14px; right: 14px; z-index: 59;
+    background: var(--surface-solid); border: 1px solid var(--border); border-radius: var(--r-lg);
+    box-shadow: var(--card-shadow);
+    padding: 10px; display: none; flex-direction: column; gap: 2px;
   }
   .mobile-menu.open { display: flex; }
-  .mobile-menu a { padding: 12px 10px; color: var(--text); font-weight: 600; border-bottom: 1px solid var(--border); }
-  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu a { padding: 13px 16px; border-radius: 12px; color: var(--text); font-weight: 600; }
+  .mobile-menu a:hover { background: var(--surface-2); }
 
-  /* ---------------- HERO ---------------- */
-  .hero { position: relative; padding: 88px 0 84px; overflow: hidden; border-bottom: 1px solid var(--border); }
-  .hero .big-suit {
-    position: absolute; top: -6%; right: -4%; z-index: 0;
-    font-size: clamp(320px, 44vw, 620px); line-height: 0.9;
-    color: transparent; -webkit-text-stroke: 1px var(--border);
-    user-select: none; pointer-events: none;
+  /* ---------------- hero ---------------- */
+  .hero { position: relative; padding: 110px 0 100px; overflow: hidden; }
+  .aurora { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+  .aurora i { display: none; }
+  .aurora .a1 {
+    display: block; position: absolute; width: 700px; height: 480px; top: -260px; left: 50%;
+    transform: translateX(-50%); border-radius: 50%; filter: blur(120px); opacity: 0.16;
+    background: radial-gradient(circle, #6E7CFF, transparent 65%);
   }
+  [data-theme="light"] .aurora .a1 { opacity: 0.12; }
   .hero-grid {
     position: relative; z-index: 1;
-    display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center;
+    display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 60px; align-items: center;
   }
-  .hero .kicker {
-    font-family: var(--font-mono); font-size: var(--step--1); letter-spacing: 0.08em;
-    color: var(--text-3);
+  .hero .pill {
+    display: inline-flex; align-items: center; gap: 9px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 999px; padding: 8px 16px;
+    font-size: 13px; font-weight: 500; color: var(--text-2);
+    backdrop-filter: blur(8px);
   }
-  .hero .kicker b { color: var(--accent-ink); font-weight: 600; }
-  .hero h1 {
-    font-size: var(--step-4); line-height: 1.06; margin: 20px 0 0; max-width: 15ch;
+  .hero .pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--success); flex: none; }
+  .hero h1 { font-size: var(--step-4); font-weight: 700; line-height: 1.04; margin: 26px 0 0; max-width: 14ch; }
+  .hero p.lead { font-size: var(--step-1); color: var(--text-2); max-width: 42ch; margin: 26px 0 0; line-height: 1.6; }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+  .hero-note {
+    margin-top: 34px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    font-family: var(--font-mono); font-size: 12px; color: var(--text-3);
   }
-  .hero h1 .hl { box-shadow: inset 0 -0.16em 0 color-mix(in srgb, var(--accent) 38%, transparent); }
-  .hero p.lead {
-    font-size: var(--step-1); color: var(--text-2); max-width: 42ch; margin: 24px 0 0; line-height: 1.55;
-  }
-  .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
-  .hero-fact {
-    margin-top: 36px; padding-top: 18px; border-top: 1px solid var(--border);
-    font-family: var(--font-mono); font-size: var(--step--1); color: var(--text-3); max-width: 52ch;
-  }
-  .hero-fact .ok { color: var(--success); }
+  .hero-note .sep { color: var(--border-strong); }
 
-  /* phone mock (Vivco keeps its own brand) */
+  /* phone mock */
   .device-stage { position: relative; display: flex; justify-content: center; }
   .phone {
-    position: relative; z-index: 2; width: 292px; aspect-ratio: 300 / 620;
-    background: #0d3138;
-    border-radius: 40px; padding: 11px;
+    position: relative; z-index: 2; width: 296px; aspect-ratio: 300 / 618;
+    background: linear-gradient(170deg, #191d2e, #0d101c);
+    border-radius: 44px; padding: 12px;
     border: 1px solid var(--border-strong);
-    box-shadow: var(--shadow-hard);
+    box-shadow: 0 40px 80px -30px rgba(0,0,0,0.75), inset 0 1px 0 rgba(255,255,255,0.1);
   }
   .phone-screen {
-    width: 100%; height: 100%; border-radius: 31px; overflow: hidden;
+    width: 100%; height: 100%; border-radius: 34px; overflow: hidden;
     background: #FDF8F3; color: #1F2937; display: flex; flex-direction: column;
     font-size: 13px; font-family: var(--font-body);
   }
-  .ps-head { background: #1F6E7E; color: #FDF8F3; padding: 22px 18px 20px; }
+  .ps-head { background: linear-gradient(135deg, #1F6E7E, #164B57); color: #FDF8F3; padding: 24px 18px 22px; }
   .ps-head .greet { font-size: 11px; opacity: 0.85; }
-  .ps-head .name { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
-  .ps-head .filial { font-family: var(--font-mono); font-size: 10px; opacity: 0.8; margin-top: 2px; }
+  .ps-head .name { font-family: var(--font-head); font-size: 19px; font-weight: 600; }
+  .ps-head .filial { font-family: var(--font-mono); font-size: 9.5px; opacity: 0.75; margin-top: 3px; letter-spacing: 0.05em; }
   .ps-body { padding: 14px; display: flex; flex-direction: column; gap: 11px; margin-top: -14px; }
-  .ps-card { background: #fff; border-radius: 14px; padding: 13px 14px; box-shadow: 0 6px 18px -12px rgba(15,26,29,0.4); }
+  .ps-card { background: #fff; border-radius: 16px; padding: 14px 15px; box-shadow: 0 8px 24px -14px rgba(15,26,29,0.45); }
   .ps-cuota { display: flex; align-items: center; justify-content: space-between; }
-  .ps-cuota .label { font-size: 10px; color: #6B7280; text-transform: uppercase; letter-spacing: 0.08em; }
-  .ps-cuota .amt { font-family: var(--font-mono); font-size: 21px; font-weight: 700; color: #1F2937; letter-spacing: -0.02em; }
-  .ps-pill { display: inline-block; margin-top: 6px; font-size: 10px; font-weight: 700; color: #15803D; background: #DCFCE7; padding: 3px 9px; border-radius: 999px; }
-  .ps-pay { background: #F97316; color: #1B1105; text-align: center; font-weight: 700; padding: 11px; border-radius: 11px; font-size: 13px; }
+  .ps-cuota .label { font-size: 9.5px; color: #6B7280; text-transform: uppercase; letter-spacing: 0.08em; }
+  .ps-cuota .amt { font-family: var(--font-mono); font-size: 21px; font-weight: 600; color: #1F2937; }
+  .ps-pill { display: inline-block; margin-top: 6px; font-size: 10px; font-weight: 700; color: #15803D; background: #DCFCE7; padding: 3px 10px; border-radius: 999px; }
+  .ps-pay { background: linear-gradient(135deg, #F97316, #FB923C); color: #fff; text-align: center; font-weight: 700; padding: 12px; border-radius: 13px; font-size: 13px; box-shadow: 0 8px 20px -8px rgba(249,115,22,0.5); }
   .ps-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .ps-act { background: #fff; border-radius: 14px; padding: 13px 12px; box-shadow: 0 6px 18px -12px rgba(15,26,29,0.4); display: flex; flex-direction: column; gap: 8px; }
-  .ps-act .ic { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: #EBF5F7; color: #1F6E7E; }
+  .ps-act { background: #fff; border-radius: 16px; padding: 13px 12px; box-shadow: 0 8px 24px -14px rgba(15,26,29,0.45); display: flex; flex-direction: column; gap: 8px; }
+  .ps-act .ic { width: 34px; height: 34px; border-radius: 11px; display: grid; place-items: center; background: #EBF5F7; color: #1F6E7E; }
   .ps-act .ic svg { width: 19px; height: 19px; }
   .ps-act.coral .ic { background: #FFF1E6; color: #C2570D; }
-  .ps-act .t { font-weight: 650; font-size: 12px; }
+  .ps-act .t { font-weight: 700; font-size: 12px; }
   .ps-act .s { font-size: 10px; color: #6B7280; margin-top: -4px; }
   .ps-toast {
-    display: flex; align-items: center; gap: 8px;
-    background: #1F2937; color: #F9FAFB; border-radius: 12px; padding: 10px 12px;
+    display: flex; align-items: center; gap: 9px;
+    background: #111827; color: #F9FAFB; border-radius: 14px; padding: 11px 13px;
     font-size: 11px; font-weight: 600;
   }
-  .ps-toast svg { width: 14px; height: 14px; color: #4ADE80; flex: none; }
-  .ps-toast small { display: block; font-weight: 400; color: #9CA3AF; font-family: var(--font-mono); font-size: 9.5px; }
+  .ps-toast svg { width: 15px; height: 15px; color: #4ADE80; flex: none; }
+  .ps-toast small { display: block; font-weight: 400; color: #9CA3AF; font-family: var(--font-mono); font-size: 9px; }
 
-  /* ---------------- SECTIONS ---------------- */
-  .section-pad { padding: 84px 0; }
-  .sec-head { max-width: 640px; margin-bottom: 44px; }
-  .sec-head h2 { font-size: var(--step-3); line-height: 1.1; margin-top: 14px; }
-  .sec-head p { color: var(--text-2); font-size: var(--step-1); margin: 14px 0 0; line-height: 1.55; }
+  .float-chip { display: none; }
 
-  /* Vivco feature banner — flat, bordered */
-  .feature-banner {
-    display: grid; grid-template-columns: 1.12fr 0.88fr;
-    border: 1px solid var(--border-strong); border-radius: 10px; overflow: hidden;
-    background: var(--surface);
-    margin-bottom: 56px;
+  /* ---------------- sections ---------------- */
+  .section-pad { padding: 104px 0; position: relative; }
+  .sec-head { max-width: 680px; margin-bottom: 56px; }
+  .sec-head h2 { font-size: var(--step-3); font-weight: 700; line-height: 1.1; margin-top: 18px; }
+  .sec-head p { color: var(--text-2); font-size: var(--step-1); margin: 16px 0 0; line-height: 1.6; }
+
+  /* card base */
+  .card {
+    position: relative;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--r-lg); overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: border-color 0.2s, background 0.2s;
   }
-  .fb-text { padding: 40px 38px; display: flex; flex-direction: column; }
-  .fb-rank { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; color: var(--text-3); }
-  .fb-rank .suit-r { color: var(--accent-ink); }
-  .fb-text h3 { font-size: var(--step-3); margin: 10px 0 0; }
-  .fb-text h3 .dot { color: var(--accent-ink); }
-  .fb-text > p { color: var(--text-2); margin: 14px 0 0; font-size: var(--step-0); max-width: 46ch; }
-  .fb-stack { margin: 20px 0 0; font-family: var(--font-mono); font-size: var(--step--1); color: var(--text-3); }
-  .fb-stack b { color: var(--text-2); font-weight: 500; }
-  .fb-row { display: flex; align-items: center; gap: 20px; margin-top: auto; padding-top: 26px; flex-wrap: wrap; }
-  .status { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; color: var(--success); font-family: var(--font-mono); }
+  .card:hover {
+    border-color: var(--border-strong);
+    background: var(--surface-2);
+  }
+
+  /* ---------------- bento work ---------------- */
+  .bento { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: auto; gap: 20px; }
+  .b-vivco { grid-column: span 3; display: grid; grid-template-columns: 1.1fr 0.9fr; }
+  .b-vivco .bv-text { padding: 44px 42px; display: flex; flex-direction: column; }
+  .rank-badge {
+    display: inline-flex; align-items: center; gap: 8px; align-self: flex-start;
+    font-family: var(--font-mono); font-size: 11.5px; font-weight: 500; letter-spacing: 0.1em;
+    color: var(--accent-2);
+    background: rgba(139,147,255,0.1); border: 1px solid rgba(139,147,255,0.25);
+    border-radius: 999px; padding: 6px 14px;
+  }
+  [data-theme="light"] .rank-badge { background: rgba(74,87,214,0.07); color: var(--accent); }
+  .b-vivco h3 { font-size: var(--step-3); font-weight: 700; margin: 18px 0 0; }
+  .b-vivco h3 .dot { color: var(--accent); }
+  .b-vivco p { color: var(--text-2); margin: 14px 0 0; max-width: 46ch; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+  .chip {
+    font-family: var(--font-mono); font-size: 11px; color: var(--text-2);
+    border: 1px solid var(--border); background: var(--surface);
+    border-radius: 999px; padding: 6px 13px;
+  }
+  .bv-row { display: flex; align-items: center; gap: 22px; margin-top: auto; padding-top: 30px; flex-wrap: wrap; }
+  .status { display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 600; color: var(--success); font-family: var(--font-mono); }
   .status .live { width: 7px; height: 7px; border-radius: 50%; background: var(--success); }
-  .proof { display: inline-flex; align-items: center; gap: 7px; font-size: var(--step--1); font-weight: 650; color: var(--accent-ink); border-bottom: 1px solid color-mix(in srgb, var(--accent) 40%, transparent); padding-bottom: 1px; transition: border-color 0.2s; }
-  .proof:hover { border-color: var(--accent-ink); }
-  .proof svg { width: 14px; height: 14px; }
-  .fb-visual {
-    padding: 30px; display: grid; place-items: center;
-    background: var(--surface-2); border-left: 1px solid var(--border);
+  .link-arrow {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: var(--step--1); font-weight: 600; color: var(--accent);
+    transition: gap 0.25s var(--ease), color 0.2s;
+  }
+  .link-arrow:hover { gap: 11px; color: var(--accent-2); }
+  .link-arrow svg { width: 15px; height: 15px; }
+  .bv-visual {
+    position: relative; display: grid; place-items: center; padding: 36px;
+    background: var(--surface);
+    border-left: 1px solid var(--border);
   }
   .mini-mock {
-    width: 100%; max-width: 330px; border-radius: 12px; border: 1px solid var(--border);
-    background: var(--bg); padding: 14px; display: grid; grid-template-columns: repeat(2,1fr); gap: 10px;
+    width: 100%; max-width: 340px; border-radius: var(--r-md); border: 1px solid var(--border);
+    background: var(--bg-2); padding: 15px; display: grid; grid-template-columns: repeat(2,1fr); gap: 11px;
   }
-  .mini-tile { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 13px; }
-  .mini-tile .ic { width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; background: rgba(31,110,126,0.18); color: #4EA3B8; margin-bottom: 9px; }
+  .mini-tile { background: var(--surface-2); border: 1px solid var(--border); border-radius: 13px; padding: 14px; transition: border-color 0.25s, background 0.25s; }
+  .mini-tile:hover { border-color: rgba(139,147,255,0.35); }
+  .mini-tile .ic {
+    width: 32px; height: 32px; border-radius: 10px; display: grid; place-items: center;
+    background: linear-gradient(135deg, rgba(31,110,126,0.35), rgba(31,110,126,0.15)); color: #6FC7D8; margin-bottom: 10px;
+  }
   [data-theme="light"] .mini-tile .ic { background: #EBF5F7; color: #1F6E7E; }
-  .mini-tile .ic svg { width: 17px; height: 17px; }
-  .mini-tile b { font-size: 13px; font-weight: 650; display: block; }
+  .mini-tile .ic svg { width: 18px; height: 18px; }
+  .mini-tile b { font-size: 13px; font-weight: 600; display: block; }
   .mini-tile small { font-size: 11px; color: var(--text-3); }
 
-  /* en el taller — early-stage products */
-  .lab-head { display: flex; align-items: baseline; gap: 14px; margin: 54px 0 20px; }
-  .lab-head h3 { font-size: var(--step-2); }
-  .lab-head span { font-family: var(--font-mono); font-size: 11px; color: var(--text-3); letter-spacing: 0.05em; text-transform: uppercase; }
-  .lab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  .lab-card { border: 1px solid var(--border-strong); border-radius: 10px; background: var(--surface); overflow: hidden; }
-  .lab-viz { height: 172px; border-bottom: 1px solid var(--border); background: var(--surface-2); display: grid; place-items: center; padding: 22px; }
-  .lab-body { padding: 18px 24px 22px; }
-  .lab-body .top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
-  .lab-body h4 { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: var(--step-1); }
-  .lab-body h4 .rk { font-family: var(--font-mono); font-size: 12px; color: var(--text-3); margin-right: 8px; }
-  .lab-body h4 .rk .rs { color: var(--accent-ink); }
-  .lab-body .st { font-family: var(--font-mono); font-size: 11px; color: var(--text-3); white-space: nowrap; }
-  .lab-body p { margin: 8px 0 0; color: var(--text-2); font-size: var(--step--1); line-height: 1.55; }
+  .b-lab { padding: 0; display: flex; flex-direction: column; }
+  .lab-viz { height: 168px; display: grid; place-items: center; padding: 22px; border-bottom: 1px solid var(--border); background: var(--surface); }
+  .lab-body { padding: 22px 26px 26px; display: flex; flex-direction: column; flex: 1; }
+  .lab-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  .lab-body h4 { font-size: var(--step-1); font-weight: 600; }
+  .lab-body .st { font-family: var(--font-mono); font-size: 10.5px; color: var(--text-3); white-space: nowrap; letter-spacing: 0.04em; }
+  .lab-body p { margin: 9px 0 0; color: var(--text-2); font-size: var(--step--1); line-height: 1.6; }
 
-  .viz-shop { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: 100%; max-width: 290px; }
-  .viz-shop .it { background: var(--cream); color: var(--cream-ink); border: 1px solid var(--border-strong); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-hard); }
-  .viz-shop .th { height: 44px; border-bottom: 1px solid var(--border); }
-  .viz-shop .pr { font-family: var(--font-mono); font-size: 10px; padding: 6px 8px; }
+  .b-cta-tile {
+    display: flex; flex-direction: column; justify-content: center; gap: 14px; padding: 30px;
+    background: var(--surface-2);
+  }
+  .b-cta-tile h4 { font-size: var(--step-1); font-weight: 600; }
+  .b-cta-tile p { margin: 0; color: var(--text-2); font-size: var(--step--1); }
 
-  .viz-route { width: 100%; max-width: 320px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
-  .viz-route svg { width: 100%; height: 74px; }
-  .viz-route .rc { font-family: var(--font-mono); font-size: 10.5px; font-weight: 600; color: var(--accent-ink); letter-spacing: 0.04em; }
-  .route-dash { stroke-dasharray: 5 6; animation: dashmove 1.6s linear infinite; }
-  @media (prefers-reduced-motion: reduce) { .route-dash { animation: none; } }
-  @keyframes dashmove { to { stroke-dashoffset: -22; } }
+  /* lab visuals */
+  .viz-shop { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; width: 100%; max-width: 250px; }
+  .viz-shop .it { background: var(--surface-solid); border: 1px solid var(--border); border-radius: 11px; overflow: hidden; }
+  .viz-shop .th { height: 40px; }
+  .viz-shop .pr { font-family: var(--font-mono); font-size: 9.5px; padding: 6px 8px; color: var(--text-2); }
+  .viz-route { width: 100%; max-width: 250px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .viz-route svg { width: 100%; height: 62px; }
+  .viz-route .rc { font-family: var(--font-mono); font-size: 10px; font-weight: 600; color: var(--accent-2); letter-spacing: 0.06em; }
+  @media (prefers-reduced-motion: no-preference) {
+    .route-dash { stroke-dasharray: 5 7; animation: dashmove 1.6s linear infinite; }
+    @keyframes dashmove { to { stroke-dashoffset: -24; } }
+  }
 
-  /* roles — visual grid */
-  .role-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  .role-card { border: 1px solid var(--border-strong); border-radius: 10px; overflow: hidden; background: var(--bg); }
-  .role-viz { height: 178px; border-bottom: 1px solid var(--border); display: grid; place-items: center; padding: 20px; background: var(--surface-2); }
-  .role-body { padding: 18px 22px 22px; }
-  .role-body h4 { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: var(--step-1); display: flex; align-items: baseline; gap: 10px; }
-  .role-body h4 small { font-family: var(--font-mono); font-size: 10px; color: var(--text-3); letter-spacing: 0.05em; }
-  .role-body p { margin: 7px 0 0; color: var(--text-2); font-size: var(--step--1); line-height: 1.55; }
+  /* ---------------- roles ---------------- */
+  .roles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .role-viz {
+    height: 190px; display: grid; place-items: center; padding: 22px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .role-body { padding: 22px 26px 26px; }
+  .role-body h4 { font-size: var(--step-1); font-weight: 600; display: flex; align-items: baseline; gap: 10px; }
+  .role-body h4 small { font-family: var(--font-mono); font-size: 10px; color: var(--text-3); letter-spacing: 0.08em; font-weight: 500; }
+  .role-body p { margin: 8px 0 0; color: var(--text-2); font-size: var(--step--1); line-height: 1.6; }
 
-  /* role mini-visuals (Vivco brand inside) */
-  .vz-phone { width: 128px; border-radius: 14px; background: #FDF8F3; border: 1px solid var(--border-strong); overflow: hidden; box-shadow: var(--shadow-hard); }
-  .vz-phone .h { background: #1F6E7E; padding: 8px 10px; color: #FDF8F3; }
-  .vz-phone .h b { display: block; font-size: 9px; }
-  .vz-phone .h small { font-family: var(--font-mono); font-size: 7px; opacity: 0.8; }
+  .vz-phone { width: 132px; border-radius: 18px; background: #FDF8F3; border: 1px solid rgba(255,255,255,0.14); overflow: hidden; box-shadow: 0 18px 36px -16px rgba(0,0,0,0.55); }
+  [data-theme="light"] .vz-phone { border-color: #D9CFC0; }
+  .vz-phone .h { background: linear-gradient(135deg, #1F6E7E, #164B57); padding: 9px 11px; color: #FDF8F3; }
+  .vz-phone .h b { display: block; font-size: 9.5px; font-family: var(--font-head); }
+  .vz-phone .h small { font-family: var(--font-mono); font-size: 6.8px; opacity: 0.75; letter-spacing: 0.05em; }
   .vz-phone .b { padding: 10px; }
-  .vz-phone .lbl { font-size: 7px; color: #6B7280; text-transform: uppercase; letter-spacing: 0.06em; }
-  .vz-phone .amt { font-family: var(--font-mono); font-weight: 700; font-size: 14px; color: #1F2937; }
-  .vz-phone .pay { margin-top: 9px; background: #F97316; border-radius: 6px; color: #1B1105; font-size: 9px; font-weight: 700; text-align: center; padding: 6px; }
+  .vz-phone .lbl { font-size: 7px; color: #6B7280; text-transform: uppercase; letter-spacing: 0.07em; }
+  .vz-phone .amt { font-family: var(--font-mono); font-weight: 600; font-size: 14px; color: #1F2937; }
+  .vz-phone .pay { margin-top: 9px; background: linear-gradient(135deg, #F97316, #FB923C); border-radius: 8px; color: #fff; font-size: 9px; font-weight: 700; text-align: center; padding: 6px; }
 
-  .vz-guard { width: 210px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-strong); box-shadow: var(--shadow-hard); }
-  .vz-guard .ok { background: #16A34A; color: #fff; padding: 20px 14px 16px; text-align: center; }
-  .vz-guard .ok .big { font-weight: 800; font-size: 17px; letter-spacing: 0.05em; }
-  .vz-guard .ok small { display: block; font-family: var(--font-mono); font-size: 9px; opacity: 0.92; margin-top: 5px; }
-  .vz-guard .deny { background: #DC2626; color: #fff; font-family: var(--font-mono); font-size: 8.5px; padding: 6px 10px; letter-spacing: 0.04em; }
+  .vz-guard { width: 216px; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.14); box-shadow: 0 18px 36px -16px rgba(0,0,0,0.55); }
+  [data-theme="light"] .vz-guard { border-color: var(--border-strong); }
+  .vz-guard .ok { background: linear-gradient(150deg, #16A34A, #15803D); color: #fff; padding: 22px 14px 18px; text-align: center; }
+  .vz-guard .ok .big { font-family: var(--font-head); font-weight: 700; font-size: 17px; letter-spacing: 0.04em; }
+  .vz-guard .ok small { display: block; font-family: var(--font-mono); font-size: 9px; opacity: 0.9; margin-top: 6px; letter-spacing: 0.05em; }
+  .vz-guard .deny { background: #B91C1C; color: #fff; font-family: var(--font-mono); font-size: 8.5px; padding: 7px 11px; letter-spacing: 0.05em; }
 
-  .vz-admin { width: 216px; background: var(--cream); color: var(--cream-ink); border: 1px solid var(--border-strong); border-radius: 10px; padding: 13px 14px; box-shadow: var(--shadow-hard); }
-  .vz-admin .kpi { font-family: var(--font-mono); font-size: 11.5px; font-weight: 700; }
-  .vz-admin .kpi em { font-style: normal; color: #C0343A; }
-  .vz-admin .bars { display: flex; gap: 7px; align-items: flex-end; height: 56px; margin-top: 12px; }
-  .vz-admin .bars i { flex: 1; background: #1F6E7E; border-radius: 3px 3px 0 0; display: block; }
-  .vz-admin .bars i.c { background: #F97316; }
+  .vz-admin { width: 220px; background: var(--surface-solid); border: 1px solid var(--border-strong); border-radius: 15px; padding: 14px 15px; box-shadow: 0 18px 36px -16px rgba(0,0,0,0.5); }
+  .vz-admin .kpi { font-family: var(--font-mono); font-size: 11.5px; font-weight: 600; color: var(--text); }
+  .vz-admin .kpi em { font-style: normal; color: var(--warm); }
+  .vz-admin .bars { display: flex; gap: 7px; align-items: flex-end; height: 56px; margin-top: 13px; }
+  .vz-admin .bars i { flex: 1; background: linear-gradient(180deg, var(--indigo), rgba(110,124,255,0.4)); border-radius: 4px 4px 2px 2px; display: block; }
+  .vz-admin .bars i.c { background: linear-gradient(180deg, var(--warm), rgba(255,184,107,0.4)); }
 
-  .vz-ledger { width: 216px; background: var(--cream); color: var(--cream-ink); border: 1px solid var(--border-strong); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow-hard); font-family: var(--font-mono); font-size: 9.5px; }
-  .vz-ledger .hd { padding: 7px 11px; border-bottom: 1px solid var(--border-strong); font-weight: 700; letter-spacing: 0.05em; font-size: 8.5px; color: var(--cream-sub); }
-  .vz-ledger .r { display: flex; justify-content: space-between; gap: 8px; padding: 7px 11px; border-bottom: 1px solid var(--border); }
+  .vz-ledger { width: 220px; background: var(--surface-solid); border: 1px solid var(--border-strong); border-radius: 15px; overflow: hidden; box-shadow: 0 18px 36px -16px rgba(0,0,0,0.5); font-family: var(--font-mono); font-size: 9.5px; color: var(--text-2); }
+  .vz-ledger .hd { padding: 8px 12px; border-bottom: 1px solid var(--border); font-weight: 600; letter-spacing: 0.06em; font-size: 8.5px; color: var(--text-3); }
+  .vz-ledger .r { display: flex; justify-content: space-between; gap: 8px; padding: 8px 12px; border-bottom: 1px solid var(--border); }
   .vz-ledger .r:last-child { border-bottom: none; }
-  .vz-ledger .in { color: #1D7A46; font-weight: 700; }
-  .vz-ledger .out { color: #C0343A; font-weight: 700; }
+  .vz-ledger .in { color: var(--success); font-weight: 600; }
+  .vz-ledger .out { color: #F87171; font-weight: 600; }
 
-  /* solutions — visual tiles */
-  .sol-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; counter-reset: sol; }
-  .sol-card { border: 1px solid var(--border-strong); border-radius: 10px; background: var(--surface); overflow: hidden; display: flex; flex-direction: column; }
-  .sol-viz { height: 128px; border-bottom: 1px solid var(--border); background: var(--surface-2); display: grid; place-items: center; padding: 18px; position: relative; }
-  .sol-viz::before {
-    counter-increment: sol; content: counter(sol, decimal-leading-zero);
-    position: absolute; top: 10px; left: 13px;
-    font-family: var(--font-mono); font-size: 11px; color: var(--text-3);
+  /* ---------------- solutions ---------------- */
+  .sols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .sol { padding: 30px 28px; }
+  .sol .ic {
+    width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 18px;
+    background: var(--surface-2); border: 1px solid var(--border);
+    color: var(--accent);
   }
-  .sol-body { padding: 16px 20px 20px; }
-  .sol-body h4 { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: var(--step-1); }
-  .sol-body p { margin: 7px 0 0; color: var(--text-2); font-size: var(--step--1); line-height: 1.5; }
-  .sol-body .proof { margin-top: 12px; }
+  .sol .ic svg { width: 22px; height: 22px; }
+  .sol h4 { font-size: var(--step-1); font-weight: 600; }
+  .sol p { margin: 10px 0 0; color: var(--text-2); font-size: var(--step--1); line-height: 1.6; }
+  .sol .link-arrow { margin-top: 16px; }
 
-  /* solution mini-visuals — cream card language */
-  .vz-win { width: 168px; background: var(--cream); color: var(--cream-ink); border: 1px solid var(--border-strong); border-radius: 9px; overflow: hidden; box-shadow: var(--shadow-hard); }
-  .vz-win .tb { display: flex; gap: 4px; padding: 6px 8px; border-bottom: 1px solid var(--border); }
-  .vz-win .tb i { width: 6px; height: 6px; border-radius: 50%; background: var(--border-strong); display: block; }
-  .vz-win .tb i:first-child { background: #C0343A; }
-  .vz-win .wb { display: grid; grid-template-columns: 34px 1fr; }
-  .vz-win .sb { border-right: 1px solid var(--border); padding: 7px 6px; display: flex; flex-direction: column; gap: 5px; }
-  .vz-win .sb i { height: 5px; border-radius: 2px; background: var(--border-strong); display: block; }
-  .vz-win .sb i.on { background: #C0343A; }
-  .vz-win .mn { padding: 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
-  .vz-win .mn i { height: 22px; border-radius: 4px; background: var(--border); display: block; }
-
-  .vz-app { width: 84px; background: var(--cream); color: var(--cream-ink); border: 1px solid var(--border-strong); border-radius: 13px; padding: 9px 8px; box-shadow: var(--shadow-hard); }
-  .vz-app .nt { width: 26px; height: 4px; border-radius: 999px; background: var(--border-strong); margin: 0 auto 9px; }
-  .vz-app .gr { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-  .vz-app .gr i { aspect-ratio: 1; border-radius: 6px; background: var(--border); display: block; }
-  .vz-app .gr i.on { background: #C0343A; }
-
-  .vz-item { width: 128px; background: var(--cream); color: var(--cream-ink); border: 1px solid var(--border-strong); border-radius: 9px; overflow: hidden; box-shadow: var(--shadow-hard); }
-  .vz-item .ph { height: 42px; background: var(--border); border-bottom: 1px solid var(--border-strong); }
-  .vz-item .inf { padding: 8px 10px; }
-  .vz-item .inf .pr { font-family: var(--font-mono); font-size: 11px; font-weight: 700; }
-  .vz-item .inf .add { margin-top: 6px; background: #C0343A; color: #FFF7F7; font-size: 9px; font-weight: 700; text-align: center; border-radius: 5px; padding: 4px; }
-
-  .vz-track { width: 100%; max-width: 200px; }
-  .vz-track .ln { display: flex; align-items: center; }
-  .vz-track .nd { width: 12px; height: 12px; border-radius: 50%; border: 2.5px solid var(--border-strong); background: var(--cream); flex: none; }
-  .vz-track .nd.done { border-color: #C0343A; background: #C0343A; }
-  .vz-track .sg { flex: 1; height: 2.5px; background: var(--border-strong); }
-  .vz-track .sg.done { background: #C0343A; }
-  .vz-track .lb { display: flex; justify-content: space-between; margin-top: 8px; font-family: var(--font-mono); font-size: 8.5px; color: var(--text-3); letter-spacing: 0.03em; }
-  .vz-track .lb b { color: var(--accent-ink); font-weight: 600; }
-
-  .vz-web { width: 168px; background: var(--cream); color: var(--cream-ink); border: 1px solid var(--border-strong); border-radius: 9px; overflow: hidden; box-shadow: var(--shadow-hard); }
-  .vz-web .tb { display: flex; align-items: center; gap: 5px; padding: 6px 8px; border-bottom: 1px solid var(--border); }
-  .vz-web .tb .url { flex: 1; height: 8px; border-radius: 999px; background: var(--border); }
-  .vz-web .hero-blk { padding: 10px 10px 12px; }
-  .vz-web .hero-blk .h { height: 9px; width: 74%; border-radius: 3px; background: var(--cream-ink); }
-  .vz-web .hero-blk .t { height: 5px; width: 92%; border-radius: 3px; background: var(--border-strong); margin-top: 6px; }
-  .vz-web .hero-blk .t2 { width: 60%; }
-  .vz-web .hero-blk .cta { width: 52px; height: 14px; border-radius: 4px; background: #C0343A; margin-top: 9px; }
-
-  .vz-say { display: flex; flex-direction: column; gap: 9px; align-items: flex-start; max-width: 210px; }
-  .vz-say .q {
-    background: var(--cream); color: var(--cream-ink); border: 1px solid var(--border-strong);
-    border-radius: 11px 11px 11px 3px; padding: 9px 13px; font-size: 11px; box-shadow: var(--shadow-hard);
+  /* ---------------- process ---------------- */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: step; }
+  .step { padding: 28px 26px; }
+  .step .n {
+    display: block; font-family: var(--font-mono); font-weight: 500; font-size: 13px;
+    color: var(--accent); margin-bottom: 16px; letter-spacing: 0.06em;
   }
-  .vz-say .a { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: var(--success); margin-left: 14px; }
-  .vz-say .a svg { width: 13px; height: 13px; }
-
-  /* process steps */
-  .steps { display: flex; flex-direction: column; border-top: 1px solid var(--border); }
-  .step {
-    display: grid; grid-template-columns: 56px 240px 1fr; gap: 20px;
-    padding: 26px 4px; border-bottom: 1px solid var(--border);
-  }
-  .step .k { font-family: var(--font-mono); font-size: 13px; color: var(--accent-ink); }
-  .step h4 { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: var(--step-1); }
-  .step h4 small { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--text-3); margin-top: 4px; letter-spacing: 0.03em; }
-  .step p { margin: 0; color: var(--text-2); font-size: var(--step-0); line-height: 1.6; max-width: 58ch; }
+  .step h4 { font-size: var(--step-0); font-weight: 600; }
+  .step h4 small { display: block; font-family: var(--font-mono); font-size: 9.5px; color: var(--text-3); margin-top: 5px; letter-spacing: 0.08em; font-weight: 500; }
+  .step p { margin: 10px 0 0; color: var(--text-2); font-size: var(--step--1); line-height: 1.6; }
   .step p b { color: var(--text); font-weight: 600; }
   .honesty {
-    margin-top: 28px; padding: 18px 22px; border-left: 3px solid var(--accent);
-    background: var(--surface); color: var(--text-2); font-size: var(--step-0); max-width: 70ch;
+    margin-top: 26px; padding: 22px 26px;
+    border-left: 2px solid var(--accent); border-radius: 0 var(--r-sm) var(--r-sm) 0;
+    background: var(--surface);
+    color: var(--text-2); font-size: var(--step-0); max-width: 76ch;
   }
   .honesty b { color: var(--text); }
 
-  /* team — actual playing cards */
+  /* ---------------- team ---------------- */
   .team { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-  .jack {
-    position: relative; aspect-ratio: 5 / 7;
-    background: var(--cream); color: var(--cream-ink);
-    border: 1px solid var(--border-strong); border-radius: 12px;
-    padding: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center;
-    box-shadow: var(--shadow-hard);
-    transition: transform 0.3s var(--ease);
-  }
-  .jack:hover { transform: rotate(-1.6deg); }
-  @media (prefers-reduced-motion: reduce) { .jack:hover { transform: none; } }
-  .corner {
-    position: absolute; display: flex; flex-direction: column; align-items: center; line-height: 1;
-    font-family: var(--font-display); font-weight: 600; font-size: 17px;
-  }
-  .corner span { font-size: 13px; margin-top: 2px; }
-  .corner.tl { top: 12px; left: 13px; }
-  .corner.br { bottom: 12px; right: 13px; transform: rotate(180deg); }
-  .corner.red { color: #C0343A; }
+  .jack { padding: 30px 24px; text-align: center; }
   .jack .ava {
-    font-family: var(--font-display); font-weight: 600; font-size: clamp(40px, 5vw, 56px);
-    letter-spacing: -0.02em; line-height: 1;
+    width: 72px; height: 72px; border-radius: 20px; margin: 0 auto 18px;
+    display: grid; place-items: center;
+    font-family: var(--font-head); font-weight: 700; font-size: 25px; color: var(--accent);
+    background: var(--surface-2); border: 1px solid var(--border);
   }
-  .jack .ava.red { color: #C0343A; }
-  .jack h4 { margin: 12px 0 0; font-size: var(--step-0); font-family: var(--font-body); font-weight: 700; }
-  .jack .role-t { font-family: var(--font-mono); font-size: 10px; color: var(--cream-sub); letter-spacing: 0.05em; margin-top: 4px; text-transform: uppercase; text-align: center; }
-  .team-note { margin-top: 26px; color: var(--text-2); font-size: var(--step-0); max-width: 62ch; }
+  .jack h4 { font-size: var(--step-1); font-weight: 600; }
+  .jack .role-t { font-family: var(--font-mono); font-size: 10.5px; color: var(--accent); letter-spacing: 0.08em; margin-top: 6px; text-transform: uppercase; }
+  .jack .suit-b {
+    position: absolute; top: 16px; right: 18px; font-size: 14px; color: var(--text-3); opacity: 0.7;
+  }
+  .jack .suit-b.red { color: var(--text-3); }
+  .team-note { margin-top: 30px; color: var(--text-2); font-size: var(--step-0); max-width: 66ch; }
 
-  /* FAQ */
-  .faq { border-top: 1px solid var(--border); max-width: 760px; }
-  .faq details { border-bottom: 1px solid var(--border); }
+  /* ---------------- faq ---------------- */
+  .faq { max-width: 780px; display: flex; flex-direction: column; gap: 12px; }
+  .faq details {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md);
+    transition: border-color 0.25s, background 0.25s;
+  }
+  .faq details:hover { border-color: var(--border-strong); }
+  .faq details[open] { border-color: rgba(139,147,255,0.4); background: var(--surface-2); }
   .faq summary {
-    cursor: pointer; list-style: none; display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
-    padding: 20px 4px; font-family: var(--font-display); font-weight: 600; font-size: var(--step-1);
+    cursor: pointer; list-style: none;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 20px 24px;
+    font-family: var(--font-head); font-weight: 600; font-size: var(--step-0);
   }
   .faq summary::-webkit-details-marker { display: none; }
-  .faq summary::after { content: "+"; font-family: var(--font-mono); color: var(--text-3); font-size: 18px; flex: none; }
-  .faq details[open] summary::after { content: "−"; color: var(--accent-ink); }
-  .faq details p { margin: 0; padding: 0 4px 22px; color: var(--text-2); max-width: 62ch; line-height: 1.65; }
+  .faq summary::after {
+    content: "+"; font-family: var(--font-mono); color: var(--text-3); font-size: 20px; flex: none;
+    transition: transform 0.25s var(--ease), color 0.2s;
+  }
+  .faq details[open] summary::after { content: "+"; transform: rotate(45deg); color: var(--accent); }
+  .faq details p { margin: 0; padding: 0 24px 22px; color: var(--text-2); line-height: 1.7; font-size: var(--step--1); }
 
-  /* CTA */
+  /* ---------------- cta ---------------- */
   .cta-panel {
-    border: 1px solid var(--border-strong); border-top: 3px solid var(--accent); border-radius: 10px;
-    background: var(--surface);
-    display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center;
-    padding: 52px 46px; overflow: hidden; position: relative;
+    position: relative; text-align: center;
+    border-radius: var(--r-lg); padding: 76px 40px;
+    background: var(--bg-2);
+    border: 1px solid var(--border);
   }
-  .cta-panel h2 { font-size: var(--step-3); max-width: 18ch; line-height: 1.1; }
-  .cta-panel p { color: var(--text-2); max-width: 48ch; margin: 14px 0 0; font-size: var(--step-0); }
-  .cta-panel .hero-cta { margin-top: 26px; }
-  .cta-card {
-    width: 150px; aspect-ratio: 5 / 7; flex: none;
-    background: var(--cream); color: var(--cream-ink);
-    border: 1px solid var(--border-strong); border-radius: 12px;
-    transform: rotate(7deg);
-    box-shadow: var(--shadow-hard);
-    position: relative; display: grid; place-items: center;
-    font-family: var(--font-display); font-weight: 600; font-size: 56px;
+  .cta-panel h2 { font-size: var(--step-3); font-weight: 700; margin: 18px auto 0; max-width: 20ch; line-height: 1.1; }
+  .cta-panel p { color: var(--text-2); max-width: 50ch; margin: 18px auto 0; font-size: var(--step-1); }
+  .cta-panel .hero-cta { justify-content: center; }
+  .cta-suits {
+    margin-top: 36px; font-size: 14px; letter-spacing: 0.5em; color: var(--text-3);
   }
-  .cta-card .corner.tl, .cta-card .corner.br { font-size: 15px; }
-  .cta-card .corner span { font-size: 12px; }
+  .cta-suits .rs { color: var(--text-3); }
 
-  /* footer */
-  footer.foot { border-top: 1px solid var(--border); padding: 52px 0 40px; margin-top: 30px; }
-  .foot-grid { display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; align-items: flex-start; }
+  /* ---------------- footer ---------------- */
+  footer.foot { border-top: 1px solid var(--border); padding: 60px 0 44px; margin-top: 40px; background: var(--bg-2); }
+  .foot-grid { display: flex; justify-content: space-between; gap: 44px; flex-wrap: wrap; align-items: flex-start; }
   .foot-brand { max-width: 300px; }
-  .foot-brand p { color: var(--text-2); font-size: var(--step--1); margin: 14px 0 0; }
-  .foot-cols { display: flex; gap: 56px; flex-wrap: wrap; }
-  .foot-col h5 { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); margin: 0 0 12px; font-weight: 600; }
-  .foot-col a { display: block; color: var(--text-2); font-size: var(--step--1); padding: 4px 0; transition: color 0.2s; }
-  .foot-col a:hover { color: var(--text); }
-  .foot-bottom { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 11px; color: var(--text-3); }
-
-  /* hero-only entrance */
-  @media (prefers-reduced-motion: no-preference) {
-    .hero-grid > div { animation: rise 0.7s var(--ease) both; }
-    .hero-grid > div:last-child { animation-delay: 0.12s; }
-    @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
-  }
-
-  /* ---- felt grain ---- */
-  body::after {
-    content: ""; position: fixed; inset: 0; z-index: 2147483647; pointer-events: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    opacity: 0.05; mix-blend-mode: overlay;
-  }
-  [data-theme="light"] body::after { opacity: 0.07; }
-
-  /* ---- card physics: lift off the table ---- */
-  .jack, .cta-card { transition: transform 0.18s ease, box-shadow 0.18s ease; }
-  .jack:hover { transform: translate(-3px, -3px) rotate(-1.2deg); box-shadow: 8px 8px 0 rgba(0,0,0,0.45); }
-  [data-theme="light"] .jack:hover { box-shadow: 8px 8px 0 rgba(27,28,32,0.12); }
-  .jack:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 rgba(0,0,0,0.35); }
-  .lab-card, .sol-card, .role-card { transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease; }
-  .lab-card:hover, .sol-card:hover, .role-card:hover {
-    transform: translate(-3px, -3px);
-    box-shadow: 6px 6px 0 rgba(0,0,0,0.35);
-  }
-  [data-theme="light"] .lab-card:hover, [data-theme="light"] .sol-card:hover, [data-theme="light"] .role-card:hover {
-    box-shadow: 6px 6px 0 rgba(27,28,32,0.10);
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .jack:hover, .lab-card:hover, .sol-card:hover, .role-card:hover { transform: none; }
-  }
-
-  /* ---- giant section numerals (folio) ---- */
-  .sec-head { position: relative; }
-  .sec-head > * { position: relative; z-index: 1; }
-  .giant-num {
-    position: absolute; top: -30px; right: 0; z-index: 0 !important;
-    font-family: var(--font-display); font-weight: 600;
-    font-size: clamp(4.2rem, 11vw, 8.5rem); line-height: 1;
-    color: transparent; -webkit-text-stroke: 1px color-mix(in srgb, var(--text) 20%, transparent);
-    pointer-events: none; user-select: none;
-  }
-
-  /* ---- identity marquee ---- */
-  .marquee { overflow: hidden; border-block: 1px solid var(--border); padding: 13px 0; background: var(--bg); }
-  .marquee-track { display: flex; width: max-content; }
-  .marquee-track span {
-    font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--text-3); white-space: nowrap; padding-right: 46px;
-  }
-  .marquee-track .rs { color: var(--accent-ink); }
-  @media (prefers-reduced-motion: no-preference) {
-    .marquee-track { animation: marq 38s linear infinite; }
-    .marquee:hover .marquee-track { animation-play-state: paused; }
-    @keyframes marq { to { transform: translateX(-50%); } }
-  }
-
-  /* ---- hero: full viewport + line reveal ---- */
-  .hero { min-height: calc(100svh - 63px); display: flex; align-items: center; padding: 44px 0 76px; }
-  .hero .wrap { width: 100%; }
-  .h1-mask { overflow: hidden; }
-  @media (prefers-reduced-motion: no-preference) {
-    .h1-mask h1 { animation: slideup 0.85s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
-    @keyframes slideup { from { transform: translateY(106%); } }
-  }
-  .scroll-hint {
-    position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); z-index: 1;
-    font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.2em; color: var(--text-3);
-  }
-
-  /* ---- scroll reveal (staggered deal) ---- */
-  @media (prefers-reduced-motion: no-preference) {
-    html.js .rv { opacity: 0; transition: opacity 0.6s ease-out; }
-    html.js .rv.in { opacity: 1; }
-  }
-
-  /* ---- mega footer wordmark ---- */
-  .giant-word {
-    display: block; margin-top: 46px;
-    font-family: var(--font-display); font-weight: 600;
-    font-size: clamp(2.6rem, 11.5vw, 9.2rem); line-height: 0.95; letter-spacing: -0.02em;
-    color: transparent; -webkit-text-stroke: 1.5px var(--accent);
-    user-select: none; transition: color 0.35s ease; text-wrap: nowrap;
-  }
-  .giant-word:hover { color: var(--accent); }
-  .colophon-suits { letter-spacing: 0.3em; }
-  .colophon-suits .rs { color: var(--accent-ink); }
-
-  /* ---- folio position index ---- */
-  .folio {
-    position: fixed; right: 20px; top: 50%; transform: translateY(-50%); z-index: 40;
-    display: none; flex-direction: column; gap: 12px;
-  }
-  @media (min-width: 1280px) { .folio { display: flex; } }
-  .folio a {
+  .foot-brand p { color: var(--text-2); font-size: var(--step--1); margin: 16px 0 0; line-height: 1.6; }
+  .foot-cols { display: flex; gap: 64px; flex-wrap: wrap; }
+  .foot-col h5 { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin: 0 0 14px; font-weight: 500; }
+  .foot-col a { display: block; color: var(--text-2); font-size: var(--step--1); padding: 5px 0; transition: color 0.2s; }
+  .foot-col a:hover { color: var(--accent); }
+  .foot-bottom {
+    margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
     font-family: var(--font-mono); font-size: 11px; color: var(--text-3);
-    display: flex; align-items: center; gap: 7px; transition: color 0.2s;
   }
-  .folio a .d { opacity: 0; color: var(--accent-ink); font-size: 8px; transition: opacity 0.2s; }
-  .folio a:hover { color: var(--text); }
-  .folio a.on { color: var(--accent-ink); }
-  .folio a.on .d { opacity: 1; }
+  .foot-bottom .suits .rs { color: var(--text-3); }
 
-  /* ---- print crop marks ---- */
-  .section-pad > .wrap { position: relative; }
-  .section-pad > .wrap::before, .section-pad > .wrap::after {
-    content: "+"; position: absolute; top: -46px;
-    font-family: var(--font-mono); font-size: 13px; line-height: 1;
-    color: color-mix(in srgb, var(--text) 24%, transparent);
-    pointer-events: none;
-  }
-  .section-pad > .wrap::before { left: 24px; }
-  .section-pad > .wrap::after { right: 24px; }
-
-  /* ---- spade cursor over the jacks ---- */
-  .jack {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24'%3E%3Cpath d='M12%202C9%207%204%209.5%204%2013.5%204%2016%206%2017.5%208.3%2017.5%209.6%2017.5%2010.7%2017%2011.3%2016.2%2011%2018%2010%2019.5%208.5%2020.5L8.5%2021.5%2015.5%2021.5%2015.5%2020.5C14%2019.5%2013%2018%2012.7%2016.2%2013.3%2017%2014.4%2017.5%2015.7%2017.5%2018%2017.5%2020%2016%2020%2013.5%2020%209.5%2015%207%2012%202Z' fill='%23E5484D'/%3E%3C/svg%3E") 11 11, pointer;
+  /* ---------------- reveal ---------------- */
+  @media (prefers-reduced-motion: no-preference) {
+    html.js .rv { opacity: 0; transform: translateY(12px); transition: opacity 0.5s ease-out, transform 0.5s ease-out; }
+    html.js .rv.in { opacity: 1; transform: none; }
+    .hero-grid > div { animation: rise 0.7s var(--ease) both; }
+    .hero-grid > div:last-child { animation-delay: 0.1s; }
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
   }
 
-  /* ---- honest stats strip (big type) ---- */
-  .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-block: 1px solid var(--border); margin-top: 44px; }
-  .stat { padding: 26px 18px 24px; }
-  .stat + .stat { border-left: 1px solid var(--border); }
-  .stat b {
-    display: block; font-family: var(--font-display); font-weight: 600;
-    font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1; letter-spacing: -0.02em;
+  /* ---------------- responsive ---------------- */
+  @media (max-width: 980px) {
+    .hero { padding: 140px 0 80px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 56px; }
+    .b-vivco { grid-template-columns: 1fr; }
+    .bv-visual { border-left: none; border-top: 1px solid var(--border); }
+    .bento { grid-template-columns: 1fr 1fr; }
+    .b-vivco { grid-column: span 2; }
+    .b-cta-tile { grid-column: span 2; }
+    .roles { grid-template-columns: 1fr; }
+    .sols { grid-template-columns: 1fr 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .team { grid-template-columns: 1fr 1fr; }
   }
-  .stat b em { font-style: normal; color: var(--accent-ink); }
-  .stat span {
-    display: block; margin-top: 8px; font-family: var(--font-mono); font-size: 10.5px;
-    letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3);
-  }
-  @media (max-width: 700px) {
-    .stats { grid-template-columns: 1fr 1fr; }
-    .stat:nth-child(3) { border-left: none; }
-    .stat:nth-child(n+3) { border-top: 1px solid var(--border); }
-  }
-
-  /* ---- growing underline on nav links ---- */
-  .nav-links a {
-    background-image: linear-gradient(var(--accent-ink), var(--accent-ink));
-    background-repeat: no-repeat; background-size: 0% 1.5px; background-position: 0 calc(100% - 4px);
-    transition: background-size 0.25s var(--ease), color 0.2s;
-  }
-  .nav-links a:hover { background-size: 100% 1.5px; }
-
-  /* ---- nominee-style metadata row ---- */
-  .lab-meta {
-    margin-top: 13px; padding-top: 11px; border-top: 1px solid var(--border);
-    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
-    color: var(--text-3); text-transform: uppercase;
-  }
-
-  /* responsive */
-  @media (max-width: 960px) {
-    .hero-grid { grid-template-columns: 1fr; gap: 48px; }
-    .hero .big-suit { font-size: 340px; top: auto; bottom: -10%; }
-    .feature-banner { grid-template-columns: 1fr; }
-    .fb-visual { border-left: none; border-top: 1px solid var(--border); }
-    .team { grid-template-columns: repeat(2, 1fr); }
-    .cta-panel { grid-template-columns: 1fr; }
-    .cta-card { display: none; }
-    .step { grid-template-columns: 40px 1fr; }
-    .step h4 { grid-column: 2; }
-    .step p { grid-column: 2; margin-top: 6px; }
-    .role-grid, .lab-grid { grid-template-columns: 1fr; }
-    .sol-grid { grid-template-columns: 1fr 1fr; }
-  }
-  @media (max-width: 520px) {
-    .team { grid-template-columns: 1fr 1fr; gap: 12px; }
-    .section-pad { padding: 64px 0; }
-    .cta-panel { padding: 38px 24px; }
-    .sol-grid { grid-template-columns: 1fr; }
+  @media (max-width: 600px) {
+    .bento { grid-template-columns: 1fr; }
+    .b-vivco, .b-cta-tile { grid-column: span 1; }
+    .sols { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr; }
+    .team { grid-template-columns: 1fr; }
+    .section-pad { padding: 76px 0; }
+    .cta-panel { padding: 56px 24px; }
+    .float-chip { display: none; }
   }
 </style>
 
 <!-- ================= NAV ================= -->
 <header class="nav">
-  <div class="nav-inner">
-    <a class="brand" href="#top" aria-label="Poker Jacks inicio">
-      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <rect x="6.5" y="9" width="24" height="30" rx="5" fill="none" stroke="var(--border-strong)" stroke-width="1.5" transform="rotate(-11 18.5 24)"/>
-        <rect x="9.5" y="3" width="24" height="31" rx="5" fill="var(--cream)" stroke="var(--border-strong)" stroke-width="1.5"/>
-        <text x="21.5" y="25.5" text-anchor="middle" font-family="Iowan Old Style, Palatino, Georgia, serif" font-size="17" font-weight="600" fill="var(--cream-ink)">J</text>
-        <text x="14.5" y="12.5" text-anchor="middle" font-family="Iowan Old Style, Palatino, Georgia, serif" font-size="7.5" font-weight="600" fill="#C0343A">J</text>
-        <text x="28.5" y="31" text-anchor="middle" font-family="Iowan Old Style, Palatino, Georgia, serif" font-size="7.5" font-weight="600" fill="#C0343A" transform="rotate(180 28.5 28.5)">J</text>
-      </svg>
-      <span>Poker <span class="jx">Jacks</span><small>Built with code</small></span>
-    </a>
+  <a class="brand" href="#top" aria-label="Poker Jacks inicio">
+    <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="pjg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#6E7CFF"/>
+          <stop offset="1" stop-color="#A78BFA"/>
+        </linearGradient>
+      </defs>
+      <rect x="6.5" y="9" width="24" height="30" rx="6" fill="none" stroke="#5D6BF0" stroke-width="1.3" opacity="0.45" transform="rotate(-11 18.5 24)"/>
+      <rect x="9.5" y="3" width="24" height="31" rx="6" fill="#12142A" stroke="#5D6BF0" stroke-width="1.8"/>
+      <text x="21.5" y="25.5" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="16" font-weight="700" fill="#F2F3FA">J</text>
+      <circle cx="14.5" cy="9.5" r="1.3" fill="#A78BFA"/>
+      <circle cx="28.5" cy="27.5" r="1.3" fill="#6E7CFF"/>
+    </svg>
+    <span>Poker <span class="jx">Jacks</span></span>
+  </a>
 
-    <nav class="nav-links" aria-label="Principal">
-      <a href="#products"><span class="es">Trabajo</span><span class="en">Work</span></a>
-      <a href="#services"><span class="es">Soluciones</span><span class="en">Solutions</span></a>
-      <a href="#process"><span class="es">Proceso</span><span class="en">Process</span></a>
-      <a href="#team"><span class="es">Equipo</span><span class="en">Team</span></a>
-    </nav>
+  <nav class="nav-links" aria-label="Principal">
+    <a href="#products"><span class="es">Trabajo</span><span class="en">Work</span></a>
+    <a href="#services"><span class="es">Soluciones</span><span class="en">Solutions</span></a>
+    <a href="#process"><span class="es">Proceso</span><span class="en">Process</span></a>
+    <a href="#team"><span class="es">Equipo</span><span class="en">Team</span></a>
+  </nav>
 
-    <div class="nav-tools">
-      <button class="toolbtn" id="langBtn" aria-label="Cambiar idioma">
-        <span class="es">EN</span><span class="en">ES</span>
-      </button>
-      <button class="toolbtn" id="themeBtn" aria-label="Cambiar tema claro u oscuro">
-        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
-        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-      </button>
-      <a class="btn btn-primary nav-cta" href="#contact"><span class="es">Agendá 30 min</span><span class="en">Book 30 min</span></a>
-      <button class="toolbtn burger" id="burger" aria-label="Menú">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
-    </div>
+  <div class="nav-tools">
+    <button class="toolbtn" id="langBtn" aria-label="Cambiar idioma"><span class="es">EN</span><span class="en">ES</span></button>
+    <button class="toolbtn" id="themeBtn" aria-label="Cambiar tema claro u oscuro">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+    <a class="btn btn-primary nav-cta" href="#contact"><span class="es">Hablemos</span><span class="en">Let's talk</span></a>
+    <button class="toolbtn burger" id="burger" aria-label="Menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
   </div>
 </header>
 
@@ -715,53 +567,51 @@
   <a href="#services"><span class="es">Soluciones</span><span class="en">Solutions</span></a>
   <a href="#process"><span class="es">Proceso</span><span class="en">Process</span></a>
   <a href="#team"><span class="es">Equipo</span><span class="en">Team</span></a>
-  <a href="#contact"><span class="es">Agendá 30 minutos</span><span class="en">Book 30 minutes</span></a>
+  <a href="#contact"><span class="es">Hablemos</span><span class="en">Let's talk</span></a>
 </nav>
 
 <span id="top"></span>
 
-<!-- folio position index -->
-<nav class="folio" aria-label="Posición en la página">
-  <a href="#products" data-sec="products"><span class="d">&#9830;</span>01</a>
-  <a href="#vivco" data-sec="vivco"><span class="d">&#9830;</span>02</a>
-  <a href="#services" data-sec="services"><span class="d">&#9830;</span>03</a>
-  <a href="#process" data-sec="process"><span class="d">&#9830;</span>04</a>
-  <a href="#team" data-sec="team"><span class="d">&#9830;</span>05</a>
-  <a href="#faq" data-sec="faq"><span class="d">&#9830;</span>06</a>
-</nav>
-
 <!-- ================= HERO ================= -->
 <section class="hero">
-  <span class="big-suit" aria-hidden="true">&#9824;</span>
+  <div class="aurora" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i></div>
   <div class="wrap hero-grid">
     <div>
-      <p class="kicker"><b>Poker Jacks</b> — <span class="es">estudio de software · Costa Rica</span><span class="en">software studio · Costa Rica</span></p>
-      <div class="h1-mask">
-        <h1>
-          <span class="es">Software a la medida, hecho por <span class="hl">quienes te contestan</span> el teléfono.</span>
-          <span class="en">Custom software, built by <span class="hl">the people who answer</span> your call.</span>
-        </h1>
-      </div>
+      <span class="pill"><span class="dot"></span><span class="es">Vivco en producción · piloto activo en Costa Rica</span><span class="en">Vivco in production · live pilot in Costa Rica</span></span>
+      <h1>
+        <span class="es">Construimos software que la gente <span class="grad-text">de verdad usa</span>.</span>
+        <span class="en">We build software people <span class="grad-text">actually use</span>.</span>
+      </h1>
       <p class="lead">
-        <span class="es">Somos cuatro ingenieros. Diseñamos, construimos y mantenemos plataformas web y móviles para empresas que ya no caben en Excel — como Vivco, nuestra plataforma de condominios en producción.</span>
-        <span class="en">We're four engineers. We design, build and maintain web and mobile platforms for businesses that have outgrown spreadsheets — like Vivco, our condo platform running in production.</span>
+        <span class="es">Somos cuatro ingenieros en Costa Rica. Diseñamos, construimos y mantenemos plataformas web y móviles para empresas que ya no caben en Excel.</span>
+        <span class="en">We're four engineers in Costa Rica. We design, build and maintain web and mobile platforms for businesses that have outgrown spreadsheets.</span>
       </p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#contact">
           <span class="es">Agendá 30 minutos</span><span class="en">Book 30 minutes</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a class="btn btn-ghost" href="#products"><span class="es">Ver Vivco</span><span class="en">See Vivco</span></a>
+        <a class="btn btn-ghost" href="#products"><span class="es">Ver nuestro trabajo</span><span class="en">See our work</span></a>
       </div>
-      <p class="hero-fact">
-        <span class="ok">●</span> <span class="es">Vivco en producción · piloto activo en Costa Rica &nbsp;·&nbsp; Flutter + Go + React &nbsp;·&nbsp; equipo de 4, sin intermediarios</span><span class="en">Vivco in production · live pilot in Costa Rica &nbsp;·&nbsp; Flutter + Go + React &nbsp;·&nbsp; team of 4, no middlemen</span>
+      <p class="hero-note">
+        <span>Flutter</span><span class="sep">·</span><span>Go</span><span class="sep">·</span><span>React</span><span class="sep">·</span><span>PostgreSQL</span><span class="sep">·</span><span class="es">IA aplicada</span><span class="en">Applied AI</span>
       </p>
     </div>
 
     <div class="device-stage">
+      <div class="float-chip chip-a">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <span><span class="es">Acceso autorizado</span><span class="en">Access granted</span><small>Filial 204 · QR · 8:42 am</small></span>
+      </div>
+      <div class="float-chip chip-b">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span>
+        <span><span class="es">Pago registrado</span><span class="en">Payment logged</span><small>₡ 145,000 · SINPE</small></span>
+      </div>
+
       <div class="phone" role="img" aria-label="Pantalla de la app Vivco mostrando la cuota del mes, un pago confirmado y accesos rápidos">
         <div class="phone-screen">
           <div class="ps-head">
-            <div class="greet"><span class="es">Buenas, </span><span class="en">Hi, </span></div>
+            <div class="greet"><span class="es">Buenas,</span><span class="en">Hi,</span></div>
             <div class="name">Ana Jiménez</div>
             <div class="filial">TORRE B · FILIAL 204</div>
           </div>
@@ -795,126 +645,119 @@
       </div>
     </div>
   </div>
-  <span class="scroll-hint" aria-hidden="true">SCROLL ↓</span>
 </section>
-
-<!-- identity marquee -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>Four of a kind <span class="rs">&#9829;</span></span><span>Built with code &#9824;</span><span>Costa Rica <span class="rs">&#9830;</span></span><span>Poker Jacks &#9827;</span><span>Four of a kind <span class="rs">&#9829;</span></span><span>Built with code &#9824;</span><span>Costa Rica <span class="rs">&#9830;</span></span><span>Poker Jacks &#9827;</span>
-    <span>Four of a kind <span class="rs">&#9829;</span></span><span>Built with code &#9824;</span><span>Costa Rica <span class="rs">&#9830;</span></span><span>Poker Jacks &#9827;</span><span>Four of a kind <span class="rs">&#9829;</span></span><span>Built with code &#9824;</span><span>Costa Rica <span class="rs">&#9830;</span></span><span>Poker Jacks &#9827;</span>
-  </div>
-</div>
 
 <!-- ================= WORK ================= -->
 <section id="products" class="section-pad">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="giant-num" aria-hidden="true">01</span>
-      <p class="idx"><b>01</b> / <span class="es">Trabajo</span><span class="en">Work</span></p>
-      <h2><span class="es">Lo que hemos construido</span><span class="en">What we've built</span></h2>
+    <div class="sec-head rv">
+      <span class="eyebrow"><span class="suit">♠</span><span class="es">Nuestro trabajo</span><span class="en">Our work</span></span>
+      <h2><span class="es">Lo que hemos <span class="grad-text">construido</span></span><span class="en">What we've <span class="grad-text">built</span></span></h2>
       <p><span class="es">No hacemos demos que se tiran. Nuestro mejor argumento de venta es el software que ya corre.</span><span class="en">We don't build throwaway demos. Our best sales pitch is the software already running.</span></p>
     </div>
 
-    <!-- Vivco featured -->
-    <article class="feature-banner rv">
-      <div class="fb-text">
-        <span class="fb-rank">A<span class="suit-r">&#9824;</span> · FLAGSHIP</span>
-        <h3>Vivco<span class="dot">.</span></h3>
-        <p><span class="es">La plataforma de administración de condominios que <b>actúa</b> en vez de esperar que navegués menús. Cuatro roles, una operación: residente, guarda, administración y contador.</span><span class="en">The condo-management platform that <b>acts</b> instead of making you dig through menus. Four roles, one operation: resident, guard, admin and treasurer.</span></p>
-        <p class="fb-stack"><b>Flutter</b> <span class="es">para una sola base iOS/Android</span><span class="en">for one iOS/Android codebase</span> · <b>Go + PostgreSQL</b> <span class="es">porque los pagos no pueden fallar</span><span class="en">because payments can't fail</span> · <b>React</b> <span class="es">para el panel administrativo</span><span class="en">for the admin panel</span></p>
-        <div class="fb-row">
-          <span class="status"><span class="live"></span><span class="es">En producción · piloto activo</span><span class="en">In production · live pilot</span></span>
-          <a class="proof" href="#vivco"><span class="es">Ver los cuatro roles</span><span class="en">See all four roles</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-      </div>
-      <div class="fb-visual">
-        <div class="mini-mock" aria-hidden="true">
-          <div class="mini-tile">
-            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3M20 20v.01M20 17v.01"/></svg></span>
-            <b><span class="es">Acceso QR</span><span class="en">QR access</span></b>
-            <small><span class="es">Biométrico, &lt;3s</span><span class="en">Biometric, &lt;3s</span></small>
+    <div class="bento">
+      <!-- Vivco -->
+      <article class="card b-vivco rv">
+        <div class="bv-text">
+          <span class="rank-badge">A♠ &nbsp;FLAGSHIP</span>
+          <h3>Vivco<span class="dot">.</span></h3>
+          <p><span class="es">La plataforma de administración de condominios que <b>actúa</b> en vez de esperar que navegués menús. Cuatro roles, una operación: residente, guarda, administración y contador.</span><span class="en">The condo-management platform that <b>acts</b> instead of making you dig through menus. Four roles, one operation: resident, guard, admin and treasurer.</span></p>
+          <div class="chips">
+            <span class="chip">Flutter</span><span class="chip">Go + PostgreSQL</span><span class="chip">React</span><span class="chip">Multi-tenant</span>
           </div>
-          <div class="mini-tile">
-            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span>
-            <b><span class="es">Cuotas y pagos</span><span class="en">Dues &amp; payments</span></b>
-            <small><span class="es">SINPE · tarjeta</span><span class="en">Card · transfer</span></small>
-          </div>
-          <div class="mini-tile">
-            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
-            <b><span class="es">Transparencia</span><span class="en">Transparency</span></b>
-            <small><span class="es">Rol contador</span><span class="en">Treasurer role</span></small>
-          </div>
-          <div class="mini-tile">
-            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.3 4.6.5-3.4 3.1 1 4.6L12 13.9 7.9 15.6l1-4.6L5.5 7.8l4.6-.5L12 3Z"/></svg></span>
-            <b><span class="es">IA voz-a-acción</span><span class="en">Voice-to-action AI</span></b>
-            <small><span class="es">Decí qué querés</span><span class="en">Just say it</span></small>
+          <div class="bv-row">
+            <span class="status"><span class="live"></span><span class="es">En producción · piloto activo</span><span class="en">In production · live pilot</span></span>
+            <a class="link-arrow" href="#vivco"><span class="es">Ver los cuatro roles</span><span class="en">See all four roles</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </div>
-      </div>
-    </article>
-
-    <!-- early-stage products -->
-    <div class="lab-head">
-      <h3><span class="es">En el taller</span><span class="en">In the workshop</span></h3>
-      <span><span class="es">Etapa temprana</span><span class="en">Early stage</span></span>
-    </div>
-    <div class="lab-grid">
-      <article class="lab-card rv">
-        <div class="lab-viz" aria-hidden="true">
-          <div class="viz-shop">
-            <div class="it"><div class="th" style="background:#D9D2BE"></div><div class="pr">₡ 4.500</div></div>
-            <div class="it"><div class="th" style="background:#C0343A"></div><div class="pr">₡ 12.000</div></div>
-            <div class="it"><div class="th" style="background:#8A93A6"></div><div class="pr">₡ 8.900</div></div>
+        <div class="bv-visual">
+          <div class="mini-mock" aria-hidden="true">
+            <div class="mini-tile">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3M20 20v.01M20 17v.01"/></svg></span>
+              <b><span class="es">Acceso QR</span><span class="en">QR access</span></b>
+              <small><span class="es">Biométrico, &lt;3s</span><span class="en">Biometric, &lt;3s</span></small>
+            </div>
+            <div class="mini-tile">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span>
+              <b><span class="es">Cuotas y pagos</span><span class="en">Dues &amp; payments</span></b>
+              <small><span class="es">SINPE · tarjeta</span><span class="en">Card · transfer</span></small>
+            </div>
+            <div class="mini-tile">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+              <b><span class="es">Transparencia</span><span class="en">Transparency</span></b>
+              <small><span class="es">Rol contador</span><span class="en">Treasurer role</span></small>
+            </div>
+            <div class="mini-tile">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.3 4.6.5-3.4 3.1 1 4.6L12 13.9 7.9 15.6l1-4.6L5.5 7.8l4.6-.5L12 3Z"/></svg></span>
+              <b><span class="es">IA voz-a-acción</span><span class="en">Voice-to-action AI</span></b>
+              <small><span class="es">Decí qué querés</span><span class="en">Just say it</span></small>
+            </div>
           </div>
-        </div>
-        <div class="lab-body">
-          <div class="top">
-            <h4><span class="rk">J<span class="rs">&#9829;</span></span>Feria</h4>
-            <span class="st"><span class="es">MVP en construcción</span><span class="en">MVP in progress</span></span>
-          </div>
-          <p><span class="es">Marketplace local: catálogo, vendedores, carrito y pagos.</span><span class="en">A local marketplace: catalog, sellers, cart and payments.</span></p>
-          <div class="lab-meta">2026 · MARKETPLACE · FLUTTER + GO</div>
         </div>
       </article>
 
-      <article class="lab-card rv">
+      <!-- Feria -->
+      <article class="card b-lab rv">
+        <div class="lab-viz" aria-hidden="true">
+          <div class="viz-shop">
+            <div class="it"><div class="th" style="background:#3D4569"></div><div class="pr">₡ 4.500</div></div>
+            <div class="it"><div class="th" style="background:#5D6BF0"></div><div class="pr">₡ 12.000</div></div>
+            <div class="it"><div class="th" style="background:#565C7E"></div><div class="pr">₡ 8.900</div></div>
+          </div>
+        </div>
+        <div class="lab-body">
+          <div class="lab-top">
+            <h4>Feria</h4>
+            <span class="st"><span class="es">MVP en construcción</span><span class="en">MVP in progress</span></span>
+          </div>
+          <p><span class="es">Marketplace local: catálogo, vendedores, carrito y pagos.</span><span class="en">A local marketplace: catalog, sellers, cart and payments.</span></p>
+        </div>
+      </article>
+
+      <!-- Rumbo -->
+      <article class="card b-lab rv">
         <div class="lab-viz" aria-hidden="true">
           <div class="viz-route">
             <svg viewBox="0 0 200 60" fill="none" stroke-linecap="round">
-              <path class="route-dash" d="M14 46 C 60 46, 62 16, 104 18 S 176 26, 188 14" stroke="var(--accent)" stroke-width="2.5"/>
-              <circle cx="14" cy="46" r="5" fill="var(--cream)" stroke="var(--accent)" stroke-width="2.5"/>
-              <circle cx="104" cy="18" r="4" fill="var(--cream)" stroke="var(--border-strong)" stroke-width="2.5"/>
-              <circle cx="188" cy="14" r="6" fill="var(--accent)"/>
+              <path class="route-dash" d="M14 46 C 60 46, 62 16, 104 18 S 176 26, 188 14" stroke="#5D6BF0" stroke-width="2.5"/>
+              <circle cx="14" cy="46" r="5" fill="#0E1019" stroke="#5D6BF0" stroke-width="2.5"/>
+              <circle cx="104" cy="18" r="4" fill="#0E1019" stroke="#5D6BF0" stroke-width="2.5"/>
+              <circle cx="188" cy="14" r="6" fill="#5D6BF0"/>
             </svg>
             <span class="rc"><span class="es">EN RUTA · 2 PARADAS</span><span class="en">EN ROUTE · 2 STOPS</span></span>
           </div>
         </div>
         <div class="lab-body">
-          <div class="top">
-            <h4><span class="rk">10&#9824;</span>Rumbo</h4>
+          <div class="lab-top">
+            <h4>Rumbo</h4>
             <span class="st"><span class="es">Piloto interno</span><span class="en">Internal pilot</span></span>
           </div>
           <p><span class="es">Rutas, tracking en vivo y gestión de flota.</span><span class="en">Routes, live tracking and fleet management.</span></p>
-          <div class="lab-meta">2026 · <span class="es">LOGÍSTICA</span><span class="en">LOGISTICS</span> · FLUTTER + GO</div>
         </div>
+      </article>
+
+      <!-- CTA tile -->
+      <article class="card b-cta-tile rv">
+        <h4><span class="es">¿El siguiente puede ser el tuyo?</span><span class="en">Could yours be next?</span></h4>
+        <p><span class="es">Contanos qué querés construir — te respondemos con una lectura honesta y un plan.</span><span class="en">Tell us what you want to build — we'll reply with an honest read and a plan.</span></p>
+        <a class="link-arrow" href="#contact"><span class="es">Iniciar la conversación</span><span class="en">Start the conversation</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </article>
     </div>
   </div>
 </section>
 
 <!-- ================= VIVCO ROLES ================= -->
-<section id="vivco" class="section-pad" style="background:var(--surface); border-block:1px solid var(--border);">
+<section id="vivco" class="section-pad" style="background:var(--bg-2); border-block:1px solid var(--border);">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="giant-num" aria-hidden="true">02</span>
-      <p class="idx"><b>02</b> / Vivco</p>
-      <h2><span class="es">Una plataforma, cuatro roles</span><span class="en">One platform, four roles</span></h2>
+    <div class="sec-head rv">
+      <span class="eyebrow"><span class="suit">♥</span>Vivco</span>
+      <h2><span class="es">Una plataforma, <span class="grad-text">cuatro roles</span></span><span class="en">One platform, <span class="grad-text">four roles</span></span></h2>
       <p><span class="es">Cada persona del condominio ve exactamente lo que necesita — y nada más.</span><span class="en">Everyone in the building sees exactly what they need — and nothing else.</span></p>
     </div>
 
-    <div class="role-grid">
-      <article class="role-card rv">
+    <div class="roles">
+      <article class="card rv">
         <div class="role-viz" aria-hidden="true">
           <div class="vz-phone">
             <div class="h"><b>Ana Jiménez</b><small>TORRE B · FILIAL 204</small></div>
@@ -931,7 +774,7 @@
         </div>
       </article>
 
-      <article class="role-card rv">
+      <article class="card rv">
         <div class="role-viz" aria-hidden="true">
           <div class="vz-guard">
             <div class="ok">
@@ -947,7 +790,7 @@
         </div>
       </article>
 
-      <article class="role-card rv">
+      <article class="card rv">
         <div class="role-viz" aria-hidden="true">
           <div class="vz-admin">
             <div class="kpi"><em>3 <span class="es">morosos</span><span class="en">overdue</span></em> · ₡ 435,000 <span class="es">pend.</span><span class="en">due</span></div>
@@ -962,7 +805,7 @@
         </div>
       </article>
 
-      <article class="role-card rv">
+      <article class="card rv">
         <div class="role-viz" aria-hidden="true">
           <div class="vz-ledger">
             <div class="hd"><span class="es">FONDO OPERATIVO · JULIO</span><span class="en">OPERATING FUND · JULY</span></div>
@@ -983,208 +826,138 @@
 <!-- ================= SOLUTIONS ================= -->
 <section id="services" class="section-pad">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="giant-num" aria-hidden="true">03</span>
-      <p class="idx"><b>03</b> / <span class="es">Soluciones</span><span class="en">Solutions</span></p>
-      <h2><span class="es">Qué construimos para vos</span><span class="en">What we build for you</span></h2>
+    <div class="sec-head rv">
+      <span class="eyebrow"><span class="suit">♦</span><span class="es">Soluciones</span><span class="en">Solutions</span></span>
+      <h2><span class="es">Qué construimos <span class="grad-text">para vos</span></span><span class="en">What we build <span class="grad-text">for you</span></span></h2>
       <p><span class="es">La misma mano escribe el diseño, el código y el deploy. Esto es lo que sabemos hacer bien.</span><span class="en">The same hands write the design, the code and the deploy. This is what we know how to do well.</span></p>
     </div>
 
-    <div class="sol-grid">
-      <article class="sol-card rv">
-        <div class="sol-viz" aria-hidden="true">
-          <div class="vz-win">
-            <div class="tb"><i></i><i></i><i></i></div>
-            <div class="wb">
-              <div class="sb"><i class="on"></i><i></i><i></i><i></i></div>
-              <div class="mn"><i></i><i></i><i></i><i></i></div>
-            </div>
-          </div>
-        </div>
-        <div class="sol-body">
-          <h4><span class="es">Plataformas a la medida</span><span class="en">Custom platforms</span></h4>
-          <p><span class="es">SaaS multi-tenant con roles, pagos y paneles.</span><span class="en">Multi-tenant SaaS with roles, payments and dashboards.</span></p>
-          <a class="proof" href="#products"><span class="es">Prueba: Vivco</span><span class="en">Proof: Vivco</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
+    <div class="sols">
+      <article class="card sol rv">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></span>
+        <h4><span class="es">Plataformas a la medida</span><span class="en">Custom platforms</span></h4>
+        <p><span class="es">SaaS multi-tenant con roles, pagos y paneles — lo que hoy vive en Excel y WhatsApp, hecho software.</span><span class="en">Multi-tenant SaaS with roles, payments and dashboards — what lives in Excel and WhatsApp today, made software.</span></p>
+        <a class="link-arrow" href="#products"><span class="es">Prueba: Vivco</span><span class="en">Proof: Vivco</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </article>
 
-      <article class="sol-card rv">
-        <div class="sol-viz" aria-hidden="true">
-          <div class="vz-app">
-            <div class="nt"></div>
-            <div class="gr"><i></i><i class="on"></i><i></i><i></i><i></i><i></i></div>
-          </div>
-        </div>
-        <div class="sol-body">
-          <h4><span class="es">Apps móviles</span><span class="en">Mobile apps</span></h4>
-          <p><span class="es">Flutter: iOS y Android desde una sola base, con biométrico y push.</span><span class="en">Flutter: iOS and Android from one codebase, with biometrics and push.</span></p>
-        </div>
+      <article class="card sol rv">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span>
+        <h4><span class="es">Apps móviles</span><span class="en">Mobile apps</span></h4>
+        <p><span class="es">Flutter: iOS y Android desde una sola base, con biométrico, push y offline desde el día uno.</span><span class="en">Flutter: iOS and Android from one codebase — biometrics, push and offline from day one.</span></p>
       </article>
 
-      <article class="sol-card rv">
-        <div class="sol-viz" aria-hidden="true">
-          <div class="vz-item">
-            <div class="ph"></div>
-            <div class="inf">
-              <div class="pr">₡ 12.000</div>
-              <div class="add"><span class="es">Agregar al carrito</span><span class="en">Add to cart</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="sol-body">
-          <h4>Marketplaces</h4>
-          <p><span class="es">Catálogo, vendedores, carrito y pagos en un solo lugar.</span><span class="en">Catalog, sellers, cart and payments in one place.</span></p>
-        </div>
+      <article class="card sol rv">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
+        <h4>Marketplaces</h4>
+        <p><span class="es">Catálogo, vendedores, carrito y pagos en un solo lugar.</span><span class="en">Catalog, sellers, cart and payments in one place.</span></p>
       </article>
 
-      <article class="sol-card rv">
-        <div class="sol-viz" aria-hidden="true">
-          <div class="vz-track">
-            <div class="ln">
-              <span class="nd done"></span><span class="sg done"></span><span class="nd done"></span><span class="sg"></span><span class="nd"></span>
-            </div>
-            <div class="lb"><b><span class="es">BODEGA</span><span class="en">DEPOT</span></b><b><span class="es">EN RUTA</span><span class="en">EN ROUTE</span></b><span><span class="es">ENTREGADO</span><span class="en">DELIVERED</span></span></div>
-          </div>
-        </div>
-        <div class="sol-body">
-          <h4><span class="es">Logística y operaciones</span><span class="en">Logistics &amp; operations</span></h4>
-          <p><span class="es">Inventario, rutas, tracking y flota.</span><span class="en">Inventory, routes, tracking and fleet.</span></p>
-        </div>
+      <article class="card sol rv">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17h4V5H2v12h3"/><path d="M14 9h4l3 3v5h-3"/><circle cx="7.5" cy="17.5" r="2"/><circle cx="17.5" cy="17.5" r="2"/></svg></span>
+        <h4><span class="es">Logística y operaciones</span><span class="en">Logistics &amp; operations</span></h4>
+        <p><span class="es">Inventario, rutas, tracking y flota — software de operación diaria.</span><span class="en">Inventory, routes, tracking and fleet — daily-operations software.</span></p>
       </article>
 
-      <article class="sol-card rv">
-        <div class="sol-viz" aria-hidden="true">
-          <div class="vz-web">
-            <div class="tb"><span class="url"></span></div>
-            <div class="hero-blk">
-              <div class="h"></div>
-              <div class="t"></div>
-              <div class="t t2"></div>
-              <div class="cta"></div>
-            </div>
-          </div>
-        </div>
-        <div class="sol-body">
-          <h4><span class="es">Sitios y páginas web</span><span class="en">Websites</span></h4>
-          <p><span class="es">Landings y sitios rápidos — esta página es un ejemplo.</span><span class="en">Fast landings and sites — this page is an example.</span></p>
-        </div>
+      <article class="card sol rv">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span>
+        <h4><span class="es">Sitios y páginas web</span><span class="en">Websites</span></h4>
+        <p><span class="es">Landings y sitios rápidos, optimizados para convertir — esta página es un ejemplo.</span><span class="en">Fast, conversion-ready landings and sites — this page is an example.</span></p>
       </article>
 
-      <article class="sol-card rv">
-        <div class="sol-viz" aria-hidden="true">
-          <div class="vz-say">
-            <div class="q"><span class="es">"Reservá el salón el sábado"</span><span class="en">"Book the hall for Saturday"</span></div>
-            <span class="a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="es">RESERVA CREADA</span><span class="en">BOOKED</span></span>
-          </div>
-        </div>
-        <div class="sol-body">
-          <h4><span class="es">IA aplicada</span><span class="en">Applied AI</span></h4>
-          <p><span class="es">Asistentes que ejecutan acciones reales — como el voz-a-acción de Vivco.</span><span class="en">Assistants that take real actions — like Vivco's voice-to-action.</span></p>
-        </div>
+      <article class="card sol rv">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.3 4.6.5-3.4 3.1 1 4.6L12 13.9 7.9 15.6l1-4.6L5.5 7.8l4.6-.5L12 3Z"/></svg></span>
+        <h4><span class="es">IA aplicada</span><span class="en">Applied AI</span></h4>
+        <p><span class="es">Asistentes que ejecutan acciones reales — como el voz-a-acción de Vivco. Medimos el retorno antes de construir.</span><span class="en">Assistants that take real actions — like Vivco's voice-to-action. We measure the return before building.</span></p>
       </article>
     </div>
   </div>
 </section>
 
 <!-- ================= PROCESS ================= -->
-<section id="process" class="section-pad" style="background:var(--surface); border-block:1px solid var(--border);">
+<section id="process" class="section-pad" style="background:var(--bg-2); border-block:1px solid var(--border);">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="giant-num" aria-hidden="true">04</span>
-      <p class="idx"><b>04</b> / <span class="es">Proceso</span><span class="en">Process</span></p>
-      <h2><span class="es">Cómo trabajamos</span><span class="en">How we work</span></h2>
+    <div class="sec-head rv">
+      <span class="eyebrow"><span class="suit">♣</span><span class="es">Proceso</span><span class="en">Process</span></span>
+      <h2><span class="es">Cómo <span class="grad-text">trabajamos</span></span><span class="en">How we <span class="grad-text">work</span></span></h2>
       <p><span class="es">Cada etapa tiene un entregable concreto. Sabés qué recibís y cuándo, desde el primer día.</span><span class="en">Every stage has a concrete deliverable. You know what you get and when, from day one.</span></p>
     </div>
 
     <div class="steps">
-      <div class="step rv">
-        <span class="k">01</span>
+      <article class="card step rv">
+        <span class="n">01</span>
         <h4><span class="es">Descubrimiento</span><span class="en">Discovery</span><small><span class="es">1–2 SEMANAS</span><span class="en">1–2 WEEKS</span></small></h4>
-        <p><span class="es">Hablamos con quienes van a usar el sistema — no solo con gerencia. <b>Entregable:</b> documento de alcance con prioridades y estimación por etapas. Es tuyo aunque no sigás con nosotros.</span><span class="en">We talk to the people who'll actually use the system — not just management. <b>Deliverable:</b> a scope document with priorities and staged estimates. It's yours even if you don't continue with us.</span></p>
-      </div>
-      <div class="step rv">
-        <span class="k">02</span>
+        <p><span class="es">Hablamos con quienes van a usar el sistema. <b>Entregable:</b> documento de alcance con prioridades — tuyo aunque no sigás con nosotros.</span><span class="en">We talk to the people who'll actually use the system. <b>Deliverable:</b> a scope document with priorities — yours even if you don't continue with us.</span></p>
+      </article>
+      <article class="card step rv">
+        <span class="n">02</span>
         <h4><span class="es">Diseño con sistema</span><span class="en">Design with a system</span><small><span class="es">EN PARALELO</span><span class="en">IN PARALLEL</span></small></h4>
-        <p><span class="es">Prototipos navegables sobre nuestro design system propio. <b>Entregable:</b> flujos clickeables que validás con usuarios reales antes de construir.</span><span class="en">Navigable prototypes on our in-house design system. <b>Deliverable:</b> clickable flows you validate with real users before we build.</span></p>
-      </div>
-      <div class="step rv">
-        <span class="k">03</span>
+        <p><span class="es">Prototipos navegables sobre nuestro design system. <b>Entregable:</b> flujos clickeables validados con usuarios reales.</span><span class="en">Navigable prototypes on our design system. <b>Deliverable:</b> clickable flows validated with real users.</span></p>
+      </article>
+      <article class="card step rv">
+        <span class="n">03</span>
         <h4><span class="es">Construcción por etapas</span><span class="en">Staged build</span><small><span class="es">DEMOS QUINCENALES</span><span class="en">BIWEEKLY DEMOS</span></small></h4>
-        <p><span class="es">Software funcionando cada dos semanas, no un big-bang al final. Revisión hostil de código antes de cada merge y CI/CD desde el día uno. <b>Entregable:</b> versión desplegada que podés tocar en cada demo.</span><span class="en">Working software every two weeks, not a big bang at the end. Hostile code review before every merge and CI/CD from day one. <b>Deliverable:</b> a deployed version you can touch at every demo.</span></p>
-      </div>
-      <div class="step rv">
-        <span class="k">04</span>
+        <p><span class="es">Software funcionando cada dos semanas. Revisión hostil de código y CI/CD desde el día uno. <b>Entregable:</b> versión desplegada en cada demo.</span><span class="en">Working software every two weeks. Hostile code review and CI/CD from day one. <b>Deliverable:</b> a deployed version at every demo.</span></p>
+      </article>
+      <article class="card step rv">
+        <span class="n">04</span>
         <h4><span class="es">Lanzamiento y mantenimiento</span><span class="en">Launch &amp; maintenance</span><small><span class="es">CONTINUO</span><span class="en">ONGOING</span></small></h4>
-        <p><span class="es">Acompañamos el despliegue, monitoreamos y mantenemos. <b>Entregable:</b> el código es tuyo, documentado, con repositorio y accesos a tu nombre.</span><span class="en">We handle the rollout, monitor and maintain. <b>Deliverable:</b> the code is yours, documented, with the repo and access under your name.</span></p>
-      </div>
+        <p><span class="es">Acompañamos el despliegue, monitoreamos y mantenemos. <b>Entregable:</b> el código es tuyo, documentado y a tu nombre.</span><span class="en">We handle rollout, monitoring and maintenance. <b>Deliverable:</b> the code is yours, documented, under your name.</span></p>
+      </article>
     </div>
 
-    <p class="honesty"><span class="es"><b>Y una cosa más:</b> si el proyecto no calza con nosotros — por alcance, presupuesto o tecnología — te lo decimos en la primera llamada, con una recomendación de a quién sí acudir.</span><span class="en"><b>One more thing:</b> if the project isn't a fit for us — scope, budget or technology — we'll tell you on the first call, with a recommendation of who to go to instead.</span></p>
+    <p class="honesty rv"><span class="es"><b>Y una cosa más:</b> si el proyecto no calza con nosotros — por alcance, presupuesto o tecnología — te lo decimos en la primera llamada, con una recomendación de a quién sí acudir.</span><span class="en"><b>One more thing:</b> if the project isn't a fit for us — scope, budget or technology — we'll tell you on the first call, with a recommendation of who to go to instead.</span></p>
   </div>
 </section>
 
 <!-- ================= TEAM ================= -->
 <section id="team" class="section-pad">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="giant-num" aria-hidden="true">05</span>
-      <p class="idx"><b>05</b> / <span class="es">Equipo</span><span class="en">Team</span></p>
-      <h2>Four of a kind</h2>
+    <div class="sec-head rv">
+      <span class="eyebrow"><span class="suit">♠</span><span class="es">Equipo</span><span class="en">Team</span></span>
+      <h2>Four of a <span class="grad-text">kind</span></h2>
       <p><span class="es">Con quien hablás en la llamada es exactamente quien escribe el código. Sin account managers, sin teléfono roto.</span><span class="en">Whoever you talk to on the call is exactly who writes the code. No account managers, no broken telephone.</span></p>
     </div>
 
     <div class="team">
-      <article class="jack rv">
-        <span class="corner tl">J<span>&#9824;</span></span>
-        <span class="corner br">J<span>&#9824;</span></span>
+      <article class="card jack rv">
+        <span class="suit-b" aria-hidden="true">♠</span>
         <div class="ava">Ja</div>
         <h4>Jafet</h4>
         <div class="role-t"><span class="es">Full-stack · Infra</span><span class="en">Full-stack · Infra</span></div>
       </article>
-      <article class="jack rv">
-        <span class="corner tl red">J<span>&#9829;</span></span>
-        <span class="corner br red">J<span>&#9829;</span></span>
-        <div class="ava red">Je</div>
+      <article class="card jack rv">
+        <span class="suit-b red" aria-hidden="true">♥</span>
+        <div class="ava">Je</div>
         <h4>Jeff</h4>
-        <div class="role-t"><span class="es">Mobile lead · Flutter</span><span class="en">Mobile lead · Flutter</span></div>
+        <div class="role-t">Mobile lead · Flutter</div>
       </article>
-      <article class="jack rv">
-        <span class="corner tl red">J<span>&#9830;</span></span>
-        <span class="corner br red">J<span>&#9830;</span></span>
-        <div class="ava red">Jo</div>
+      <article class="card jack rv">
+        <span class="suit-b red" aria-hidden="true">♦</span>
+        <div class="ava">Jo</div>
         <h4>Johan</h4>
         <div class="role-t"><span class="es">Mobile · Features</span><span class="en">Mobile · Features</span></div>
       </article>
-      <article class="jack rv">
-        <span class="corner tl">J<span>&#9827;</span></span>
-        <span class="corner br">J<span>&#9827;</span></span>
+      <article class="card jack rv">
+        <span class="suit-b" aria-hidden="true">♣</span>
         <div class="ava">Jy</div>
         <h4>Jason</h4>
         <div class="role-t"><span class="es">Backend · Automatización</span><span class="en">Backend · Automation</span></div>
       </article>
     </div>
 
-    <p class="team-note"><span class="es">Cuatro jacks, una mano: metodología propia con propuestas votadas, revisión cruzada de código y memoria de equipo compartida. Suena a burocracia; es lo que hace que cuatro personas construyan como veinte.</span><span class="en">Four jacks, one hand: our own methodology with voted proposals, cross code-review and shared team memory. Sounds like bureaucracy; it's what lets four people build like twenty.</span></p>
-
-    <div class="stats rv">
-      <div class="stat"><b>4</b><span><span class="es">Ingenieros, cero intermediarios</span><span class="en">Engineers, zero middlemen</span></span></div>
-      <div class="stat"><b>3</b><span><span class="es">Productos propios</span><span class="en">In-house products</span></span></div>
-      <div class="stat"><b>2</b><span><span class="es">Idiomas: ES + EN</span><span class="en">Languages: ES + EN</span></span></div>
-      <div class="stat"><b><em>1</em></b><span><span class="es">Archivo HTML: esta página</span><span class="en">HTML file: this page</span></span></div>
-    </div>
+    <p class="team-note rv"><span class="es">Cuatro jacks, una mano: metodología propia con propuestas votadas, revisión cruzada de código y memoria de equipo compartida. Suena a burocracia; es lo que hace que cuatro personas construyan como veinte.</span><span class="en">Four jacks, one hand: our own methodology with voted proposals, cross code-review and shared team memory. Sounds like bureaucracy; it's what lets four people build like twenty.</span></p>
   </div>
 </section>
 
 <!-- ================= FAQ ================= -->
-<section id="faq" class="section-pad" style="background:var(--surface); border-block:1px solid var(--border);">
+<section id="faq" class="section-pad" style="background:var(--bg-2); border-block:1px solid var(--border);">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="giant-num" aria-hidden="true">06</span>
-      <p class="idx"><b>06</b> / <span class="es">Preguntas</span><span class="en">Questions</span></p>
-      <h2><span class="es">Lo que nos preguntan antes de empezar</span><span class="en">What we get asked before starting</span></h2>
+    <div class="sec-head rv">
+      <span class="eyebrow"><span class="suit">♥</span><span class="es">Preguntas</span><span class="en">Questions</span></span>
+      <h2><span class="es">Lo que nos preguntan <span class="grad-text">antes de empezar</span></span><span class="en">What we get asked <span class="grad-text">before starting</span></span></h2>
     </div>
 
-    <div class="faq">
+    <div class="faq rv">
       <details>
         <summary><span class="es">¿Solo son cuatro personas?</span><span class="en">Are you really just four people?</span></summary>
         <p><span class="es">Sí, y es a propósito. Cada uno es dueño de su carril (backend, mobile, infra, features) y no hay capas intermedias: la persona que entiende tu problema es la que lo programa. Para proyectos que exceden nuestra capacidad, lo decimos antes de firmar.</span><span class="en">Yes, on purpose. Each of us owns a lane (backend, mobile, infra, features) and there are no middle layers: the person who understands your problem is the one coding it. For projects beyond our capacity, we say so before signing.</span></p>
@@ -1213,22 +986,17 @@
 <section id="contact" class="section-pad">
   <div class="wrap">
     <div class="cta-panel rv">
-      <div>
-        <p class="idx"><b><span class="es">Tu turno</span><span class="en">Your move</span></b></p>
-        <h2 style="margin-top:12px"><span class="es">¿Tenés un proyecto? Juguemos.</span><span class="en">Got a project? Let's play.</span></h2>
-        <p><span class="es">Treinta minutos, sin costo y sin compromiso. Salís con una recomendación técnica honesta — aunque no nos contratés.</span><span class="en">Thirty minutes, free, no strings. You leave with an honest technical recommendation — even if you don't hire us.</span></p>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="mailto:hola@pokerjacks.dev?subject=Proyecto">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-            <span class="es">Contanos qué necesitás</span><span class="en">Tell us what you need</span>
-          </a>
-        </div>
+      <span class="eyebrow"><span class="es">Tu turno</span><span class="en">Your move</span></span>
+      <h2><span class="es">¿Tenés un proyecto? Juguemos.</span><span class="en">Got a project? Let's play.</span></h2>
+      <p><span class="es">Treinta minutos, sin costo y sin compromiso. Salís con una recomendación técnica honesta — aunque no nos contratés.</span><span class="en">Thirty minutes, free, no strings. You leave with an honest technical recommendation — even if you don't hire us.</span></p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="mailto:hola@pokerjacks.dev?subject=Proyecto">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          <span class="es">Contanos qué necesitás</span><span class="en">Tell us what you need</span>
+        </a>
+        <a class="btn btn-ghost" href="#products"><span class="es">Ver el trabajo primero</span><span class="en">See the work first</span></a>
       </div>
-      <div class="cta-card" aria-hidden="true">
-        <span class="corner tl red">J<span>&#9829;</span></span>
-        <span class="corner br red">J<span>&#9829;</span></span>
-        J
-      </div>
+      <div class="cta-suits" aria-hidden="true">♠ <span class="rs">♥</span> ♣ <span class="rs">♦</span></div>
     </div>
   </div>
 </section>
@@ -1240,13 +1008,19 @@
       <div class="foot-brand">
         <a class="brand" href="#top">
           <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-            <rect x="6.5" y="9" width="24" height="30" rx="5" fill="none" stroke="var(--border-strong)" stroke-width="1.5" transform="rotate(-11 18.5 24)"/>
-            <rect x="9.5" y="3" width="24" height="31" rx="5" fill="var(--cream)" stroke="var(--border-strong)" stroke-width="1.5"/>
-            <text x="21.5" y="25.5" text-anchor="middle" font-family="Iowan Old Style, Palatino, Georgia, serif" font-size="17" font-weight="600" fill="var(--cream-ink)">J</text>
-            <text x="14.5" y="12.5" text-anchor="middle" font-family="Iowan Old Style, Palatino, Georgia, serif" font-size="7.5" font-weight="600" fill="#C0343A">J</text>
-            <text x="28.5" y="31" text-anchor="middle" font-family="Iowan Old Style, Palatino, Georgia, serif" font-size="7.5" font-weight="600" fill="#C0343A" transform="rotate(180 28.5 28.5)">J</text>
+            <defs>
+              <linearGradient id="pjg2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#6E7CFF"/>
+                <stop offset="1" stop-color="#A78BFA"/>
+              </linearGradient>
+            </defs>
+            <rect x="6.5" y="9" width="24" height="30" rx="6" fill="none" stroke="#5D6BF0" stroke-width="1.3" opacity="0.45" transform="rotate(-11 18.5 24)"/>
+            <rect x="9.5" y="3" width="24" height="31" rx="6" fill="#12142A" stroke="#5D6BF0" stroke-width="1.8"/>
+            <text x="21.5" y="25.5" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="16" font-weight="700" fill="#F2F3FA">J</text>
+            <circle cx="14.5" cy="9.5" r="1.3" fill="#A78BFA"/>
+            <circle cx="28.5" cy="27.5" r="1.3" fill="#6E7CFF"/>
           </svg>
-          <span>Poker <span class="jx">Jacks</span><small>Built with code</small></span>
+          <span>Poker <span class="jx">Jacks</span></span>
         </a>
         <p><span class="es">Estudio de software costarricense. Cuatro ingenieros, cero intermediarios.</span><span class="en">Costa Rican software studio. Four engineers, zero middlemen.</span></p>
       </div>
@@ -1271,10 +1045,9 @@
         </div>
       </div>
     </div>
-    <a class="giant-word" href="#contact" aria-label="Poker Jacks — contacto">POKER JACKS</a>
     <div class="foot-bottom">
       <span>© <span id="year">2026</span> Poker Jacks · <span class="es">Todos los derechos reservados</span><span class="en">All rights reserved</span></span>
-      <span class="colophon-suits" aria-hidden="true">&#9824;<span class="rs">&#9829;</span>&#9827;<span class="rs">&#9830;</span></span>
+      <span class="suits" aria-hidden="true">♠ <span class="rs">♥</span> ♣ <span class="rs">♦</span></span>
       <span><span class="es">Hecho en Costa Rica</span><span class="en">Made in Costa Rica</span> · Four of a kind · Built with code</span>
     </div>
   </div>
@@ -1328,7 +1101,7 @@
       if (y) y.textContent = String(new Date().getFullYear());
     } catch (e) {}
 
-    // ---- scroll reveal (staggered like dealing cards) ----
+    // ---- scroll reveal (staggered) ----
     root.classList.add("js");
     var rvs = document.querySelectorAll(".rv");
     if ("IntersectionObserver" in window) {
@@ -1351,26 +1124,6 @@
       rvs.forEach(function (el) { io.observe(el); });
     } else {
       rvs.forEach(function (el) { el.classList.add("in"); });
-    }
-
-    // ---- folio active state ----
-    if ("IntersectionObserver" in window) {
-      var folioLinks = document.querySelectorAll(".folio a");
-      if (folioLinks.length) {
-        var secIo = new IntersectionObserver(function (entries) {
-          entries.forEach(function (en) {
-            if (!en.isIntersecting) return;
-            var id = en.target.id;
-            folioLinks.forEach(function (a) {
-              a.classList.toggle("on", a.getAttribute("data-sec") === id);
-            });
-          });
-        }, { rootMargin: "-42% 0px -52% 0px", threshold: 0 });
-        ["products", "vivco", "services", "process", "team", "faq"].forEach(function (id) {
-          var s = document.getElementById(id);
-          if (s) secIo.observe(s);
-        });
-      }
     }
   })();
 </script>
