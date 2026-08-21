@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>Vivco — Logo Mark Inverse</title>
+  <desc>Logo mark sin fondo (transparente). Usar sobre superficies oscuras: teal-700, charcoal, fotografías con overlay. Símbolo en blanco/sand.</desc>
+
+  <!-- Roof (peaked top) — sand-100 para contraste máximo sobre oscuro -->
+  <path d="M 136 218 L 256 110 L 376 218"
+        stroke="#FDF8F3"
+        stroke-width="30"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"/>
+
+  <!-- V letter — blanco puro -->
+  <path d="M 140 222 L 256 408 L 372 222"
+        stroke="#FFFFFF"
+        stroke-width="44"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"/>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>Vivco — Logo Mark</title>
+  <desc>Logo mark con fondo teal-500. Usar sobre superficies claras: blanco, sand-100. App icon, avatar, favicon.</desc>
+
+  <!-- Background rounded square — teal-500 -->
+  <rect x="0" y="0" width="512" height="512" rx="112" fill="#1F6E7E"/>
+
+  <!-- Roof (peaked top) — coral-300 -->
+  <path d="M 136 218 L 256 110 L 376 218"
+        stroke="#FDBA74"
+        stroke-width="30"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"/>
+
+  <!-- V letter — coral-500 -->
+  <path d="M 140 222 L 256 408 L 372 222"
+        stroke="#F97316"
+        stroke-width="44"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"/>
+</svg>

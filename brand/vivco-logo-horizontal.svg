@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 220" width="760" height="220">
+  <title>Vivco — Logo Horizontal Light</title>
+  <desc>Logo horizontal para fondos claros: blanco, sand-100. Mark con fondo teal-500, wordmark en charcoal. Docs, emails, landing header.</desc>
+
+  <!-- Logo mark con fondo teal-500 -->
+  <g transform="translate(10, 10) scale(0.39)">
+    <!-- Background rounded square — teal-500 -->
+    <rect x="0" y="0" width="512" height="512" rx="112" fill="#1F6E7E"/>
+    <!-- Roof — coral-300 -->
+    <path d="M 136 218 L 256 110 L 376 218"
+          stroke="#FDBA74"
+          stroke-width="30"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill="none"/>
+    <!-- V — coral-500 -->
+    <path d="M 140 222 L 256 408 L 372 222"
+          stroke="#F97316"
+          stroke-width="44"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill="none"/>
+  </g>
+
+  <!-- Wordmark "vivco" — charcoal sobre fondo claro -->
+  <text x="240" y="145"
+        font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+        font-size="120"
+        font-weight="700"
+        letter-spacing="-3"
+        fill="#1F2937">vivco</text>
+</svg>
