@@ -31,6 +31,9 @@
       const reduced = window.matchMedia('(prefers-reduced-motion: reduce)')
       const header = document.getElementById('site-header')
       const logo = document.getElementById('site-logo')
+      // La carpeta del logo se toma del propio elemento: asi el intercambio
+      // funciona igual publicado en la raiz o bajo un subdirectorio.
+      const logoBase = (logo.getAttribute('src') || '/brand/').replace(/[^/]+$/, '')
       const navLinks = [...document.querySelectorAll('[data-nav-link]')]
       const capRows = [...document.querySelectorAll('[data-cap-row]')]
       const pathLine = document.querySelector('[data-path-progress]')
@@ -43,7 +46,7 @@
         lastScrolled = scrolled
         header.style.background = scrolled ? 'var(--color-bg)' : 'transparent'
         header.style.borderBottom = scrolled ? '1px solid color-mix(in srgb, var(--color-text) 16%, transparent)' : '1px solid color-mix(in srgb, #ffffff 22%, transparent)'
-        logo.src = scrolled ? '/brand/vivco-logo-horizontal.svg' : '/brand/vivco-logo-horizontal-dark.svg'
+        logo.src = logoBase + (scrolled ? 'vivco-logo-horizontal.svg' : 'vivco-logo-horizontal-dark.svg')
         navLinks.forEach((link) => { link.style.color = scrolled ? 'var(--color-text)' : '#ffffff' })
       }
 
